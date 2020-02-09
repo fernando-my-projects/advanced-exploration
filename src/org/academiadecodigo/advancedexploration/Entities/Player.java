@@ -1,5 +1,6 @@
 package org.academiadecodigo.advancedexploration.Entities;
 
+import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.Obstacles.Obstacle;
 import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
@@ -13,9 +14,9 @@ public class Player {
     private boolean hasHat;
     private boolean hasWhip;
 
-    public Player(){
+    public Player(int col, int row, Field field){
 
-        pos = new Position();
+        pos = new Position(col, row, field);
     }
 
     public void interact(Interactable interactable){
@@ -38,5 +39,9 @@ public class Player {
 
     public void setPoints(int points) {
         this.points += points;
+    }
+
+    public Position getPos() {
+        return pos;
     }
 }

@@ -1,10 +1,12 @@
 package org.academiadecodigo.advancedexploration.PointsInterest;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
+import org.academiadecodigo.advancedexploration.Field;
 
 public class Crypt extends PointsInterest {
 
-    public Crypt(){
+    public Crypt(int col, int row, Field field){
+        super(col, row, field);
         reward = 100;
         penalty = 50;
         risk = 0.7;
