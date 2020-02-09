@@ -1,10 +1,12 @@
 package org.academiadecodigo.advancedexploration.PointsInterest;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
+import org.academiadecodigo.advancedexploration.Field;
 
 public class Pyramid extends PointsInterest {
 
-    public Pyramid(){
+    public Pyramid(int col, int row, Field field){
+        super(col, row, field);
         reward = 50;
         penalty = 25;
         risk = 0.5;
