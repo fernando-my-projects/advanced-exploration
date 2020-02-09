@@ -8,7 +8,7 @@ public class PlayerMoves implements KeyboardHandler {
 
     private Picture nazi;
     public PlayerMoves() {
-        nazi = new Picture(0,0, "/Users/codecadet/Desktop/advanced-exploration/images/nazi-hitler.PNG");
+        nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
         nazi.draw();
     }
 
