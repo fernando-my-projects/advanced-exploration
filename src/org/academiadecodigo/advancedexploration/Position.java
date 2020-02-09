@@ -12,6 +12,11 @@ public class Position {
         this.field = field;
     }
 
+    public Position(int col, int row){
+        this.col = col;
+        this.row = row;
+    }
+
 
     public int getCol() {
         return col;

@@ -33,15 +33,20 @@ public class PossibleMoves {
      */
 
 
-    public void checkRight(Player player){
+    public boolean checkRight(Player player){
 
+        if (player.getPos().getCol() == (player.getField().getWidth() - 1)){
+            return false;
+        }
 
+        posToCampare = new Position(player.getPos().getCol() + 1, player.getPos().getRow());
 
         for (Rock rock : rocks) {
 
-
-
-        }
+            if(rock.getPos().equals(posToCampare)){
+                return false;
+            }
+        } return true;
 
     }
 
