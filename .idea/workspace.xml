@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8e9eeb39-fce3-4a0a-bdc6-8f465c4ab12c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="2d72b6be-9693-4366-bbed-88e229dc60cd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-addMethodField
-
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Nazi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Nazi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Obstacle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Obstacle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Snake.java" afterDir="false" />
-master
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,15 +15,13 @@ master
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-addMethodField
-        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Field.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-              
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -84,18 +76,10 @@ addMethodField
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
               <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-master
             </state>
           </provider>
         </entry>
       </file>
-addMethodField
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/ImagesAndMoviment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -143,7 +127,6 @@ addMethodField
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-master
             </state>
           </provider>
         </entry>
@@ -163,16 +146,6 @@ master
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-addMethodField
-        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/Paparasciis.java" />
-        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/imagesAndMovement.java" />
-        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/ImagesAndMoviment.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Whip.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Hat.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Hat.java" />
@@ -193,9 +166,11 @@ addMethodField
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-master
     <option name="width" value="1920" />
-    <option name="height" value="990" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -206,26 +181,47 @@ master
         <subPane>
           <expand>
             <path>
-              <item name="AdvancedExploration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdvancedExploration" type="462c0819:PsiDirectoryNode" />
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AdvancedExploration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdvancedExploration" type="462c0819:PsiDirectoryNode" />
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="AdvancedExploration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdvancedExploration" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AdvancedExploration" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AdvancedExploration" type="462c0819:PsiDirectoryNode" />
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
-              <item name="pictures" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
+              <item name="Entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
+              <item name="Items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
+              <item name="Obstacles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
+              <item name="PointsInterest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -236,16 +232,15 @@ master
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581187901847" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="org.academiadecodigo.advancedexploration.test" />
-    </key>
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -264,36 +259,28 @@ master
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8e9eeb39-fce3-4a0a-bdc6-8f465c4ab12c" name="Default Changelist" comment="" />
-      <created>1581186714432</created>
+      <changelist id="2d72b6be-9693-4366-bbed-88e229dc60cd" name="Default Changelist" comment="" />
+      <created>1581181754034</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-addMethodField
-      <updated>1581186714432</updated>
-      <workItem from="1581186716824" duration="1725000" />
-
       <updated>1581181754034</updated>
       <workItem from="1581181755585" duration="7327000" />
-master
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-addMethodField
-    <option name="totallyTimeSpent" value="1725000" />
-
     <option name="totallyTimeSpent" value="7327000" />
-master
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="990" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" />
       <window_info id="Designer" />
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17305644" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -322,14 +309,6 @@ master
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-addMethodField
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/Paparasciis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Game.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -426,23 +405,11 @@ addMethodField
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-master
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-addMethodField
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/ImagesAndMoviment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-
         <state relative-caret-position="561">
           <caret line="33" column="5" lean-forward="true" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
@@ -474,16 +441,48 @@ addMethodField
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-master
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>11</last-edited>
+          <last-edited>12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>

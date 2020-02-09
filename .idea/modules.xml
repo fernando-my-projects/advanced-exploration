@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AdvancedExploration.iml" filepath="$PROJECT_DIR$/AdvancedExploration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/advanced-exploration.iml" filepath="$PROJECT_DIR$/advanced-exploration.iml" />
     </modules>
   </component>
 </project>
