@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d72b6be-9693-4366-bbed-88e229dc60cd" name="Default Changelist" comment="">
+    <list default="true" id="1c2ae1d9-35ed-45f0-83b2-477a057e3036" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Main.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Hat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Hat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Whip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Whip.java" afterDir="false" />
+
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,31 +21,48 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PointsInterest/Crypt.java">
           <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="270">
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+
             <state relative-caret-position="272">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Position.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PointsInterest/Pyramid.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
               <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Field.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Hat.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -47,31 +71,49 @@
                 <element signature="e#207#208#0" expanded="true" />
                 <element signature="e#228#229#0" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Obstacle.java">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/graphics/Text.java">
           <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="60">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+
             <state relative-caret-position="272">
               <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Obstacles/Nazi.java">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/Tester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+            <state relative-caret-position="847">
+              <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+              <folding>
+                <element signature="e#2834#2835#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
+
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PlayerMoves.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Rock.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -90,12 +132,19 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#187#188#0" expanded="true" />
                 <element signature="e#222#223#0" expanded="true" />
+
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+
+        <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/keyboard/KeyboardEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+
         <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Entities/Player.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
@@ -127,6 +176,7 @@
                 <element signature="e#208#209#0" expanded="true" />
                 <element signature="e#229#230#0" expanded="true" />
               </folding>
+
             </state>
           </provider>
         </entry>
@@ -146,6 +196,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/AdvancedExploration.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Images.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/Tester.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PlayerMoves.java" />
+        <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Main.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="958" />
+    <option name="height" value="1080" />
+
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Whip.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Hat.java" />
         <option value="$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Snakes.java" />
@@ -171,9 +234,7 @@
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="977" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -181,7 +242,9 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+
       <pane id="Scope" />
+
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,6 +263,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
             </path>
+
             <path>
               <item name="advanced-exploration" type="b2602c69:ProjectViewProjectNode" />
               <item name="advanced-exploration" type="462c0819:PsiDirectoryNode" />
@@ -235,22 +299,22 @@
               <item name="advancedexploration" type="462c0819:PsiDirectoryNode" />
               <item name="PointsInterest" type="462c0819:PsiDirectoryNode" />
             </path>
+
           </expand>
           <select />
         </subPane>
       </pane>
+
+      <pane id="Scope" />
+
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1581271974454" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -264,22 +328,82 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.advancedexploration.Main" />
+      <module name="advanced-exploration" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.academiadecodigo.advancedexploration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tester" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.advancedexploration.test.Tester" />
+      <module name="advanced-exploration" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.academiadecodigo.advancedexploration.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Tester" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2d72b6be-9693-4366-bbed-88e229dc60cd" name="Default Changelist" comment="" />
-      <created>1581181754034</created>
+      <changelist id="1c2ae1d9-35ed-45f0-83b2-477a057e3036" name="Default Changelist" comment="" />
+      <created>1581267189655</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+
+      <updated>1581267189655</updated>
+      <workItem from="1581267190937" duration="4061000" />
+
       <updated>1581181754034</updated>
       <workItem from="1581181755585" duration="7327000" />
       <workItem from="1581265852891" duration="3247000" />
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+
+    <option name="totallyTimeSpent" value="4061000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="958" height="1080" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26200873" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" weight="0.32970297" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+
     <option name="totallyTimeSpent" value="10574000" />
   </component>
   <component name="ToolWindowManager">
@@ -293,9 +417,10 @@
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2930693" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -320,30 +445,66 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Position.java">
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/graphics/Canvas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
+        <state relative-caret-position="105">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
+
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Items/Hat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/pictures/Picture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/AdvancedExploration.java">
+
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PointsInterest/PointsInterest.java">
+
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#469#470#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/keyboard/KeyboardEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/test/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="847">
+          <caret line="76" column="5" lean-forward="true" selection-start-line="76" selection-start-column="5" selection-end-line="76" selection-end-column="5" />
+          <folding>
+            <element signature="e#2834#2835#0" expanded="true" />
+          </folding>
+
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -362,18 +523,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PointsInterest/Crypt.java">
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/graphics/Text.java">
       <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="60">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PointsInterest/Pyramid.java">
       <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="270">
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Position.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/Field.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/academiadecodigo/advancedexploration/PlayerMoves.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+
         <state relative-caret-position="306">
           <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
         </state>
@@ -452,6 +649,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#187#188#0" expanded="true" />
             <element signature="e#222#223#0" expanded="true" />
+
           </folding>
         </state>
       </provider>
@@ -459,42 +657,9 @@
   </component>
   <component name="masterDetails">
     <states>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
       <state key="ProjectJDKs.UI">
         <settings>
-          <last-edited>12</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
+          <last-edited>11</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
