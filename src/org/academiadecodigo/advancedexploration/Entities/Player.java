@@ -13,10 +13,11 @@ public class Player {
     private Position pos;
     private boolean hasHat;
     private boolean hasWhip;
+    private Field field;
 
     public Player(int col, int row, Field field){
-
         pos = new Position(col, row, field);
+        this.field = field;
     }
 
     public void interact(Interactable interactable){
@@ -43,5 +44,9 @@ public class Player {
 
     public Position getPos() {
         return pos;
+    }
+
+    public Field getField() {
+        return field;
     }
 }
