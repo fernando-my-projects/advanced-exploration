@@ -7,9 +7,8 @@ public class Snake extends Obstacle {
 
     public Snake(){
         damage = 20;
-        reward = 10;
+        reward = damage*2;
     }
-
 
     @Override
     public void getFightResult(Player player) {
