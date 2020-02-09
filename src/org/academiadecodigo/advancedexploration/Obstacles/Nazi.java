@@ -6,9 +6,8 @@ public class Nazi extends Obstacle {
 
     public Nazi(){
         damage = 40;
-        reward = 30;
+        reward = damage*2;
     }
-
 
     @Override
     public void getFightResult(Player player) {

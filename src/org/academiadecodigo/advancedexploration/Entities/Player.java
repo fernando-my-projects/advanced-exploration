@@ -1,5 +1,6 @@
 package org.academiadecodigo.advancedexploration.Entities;
 
+import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.Obstacles.Obstacle;
 import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
 import org.academiadecodigo.advancedexploration.Position;
@@ -17,20 +18,18 @@ public class Player {
         pos = new Position();
     }
 
-    public void explore(PointsInterest pi){
-        pi.getExploreResult(this);
-    }
-
-    public void fight(Obstacle obs){
-        obs.getFightResult(this);
+    public void interact(Interactable interactable){
+        interactable.interact(this);
     }
 
     public void putOnHat(){
         hasHat = true;
+        points += 50;
     }
 
     public void pickWhip(){
         hasWhip = true;
+        points += 50;
     }
 
     public void setEnergy(int energy) {
