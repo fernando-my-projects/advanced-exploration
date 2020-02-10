@@ -6,10 +6,14 @@ import org.academiadecodigo.advancedexploration.pictures.Picture;
 
 public class PlayerMoves implements KeyboardHandler {
 
-    private Picture nazi;
+    private Picture indi;
     public PlayerMoves() {
-        nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
-        nazi.draw();
+
+        indi = new Picture(0,0, "images/indi_50x50.png");
+        indi.draw();
+
+        /*nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
+        nazi.draw();*/
     }
 
     @Override
@@ -17,16 +21,16 @@ public class PlayerMoves implements KeyboardHandler {
 
         switch (e.getKey()) {
             case KeyboardEvent.KEY_RIGHT:
-                nazi.translate(10,0);
+                indi.translate(10,0);
                 break;
             case KeyboardEvent.KEY_LEFT:
-                nazi.translate(-10,0);
+                indi.translate(-10,0);
                 break;
             case KeyboardEvent.KEY_DOWN:
-                nazi.translate(0,10);
+                indi.translate(0,10);
                 break;
             case KeyboardEvent.KEY_UP:
-                nazi.translate(0,-10);
+                indi.translate(0,-10);
                 break;
         }
     }
