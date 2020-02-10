@@ -3,16 +3,16 @@ package org.academiadecodigo.advancedexploration.Obstacles;
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
-import org.academiadecodigo.advancedexploration.Position;
+import org.academiadecodigo.advancedexploration.FieldPosition;
 
 public abstract class Obstacle implements Interactable {
 
     protected int damage;
     protected int reward;
-    protected Position pos;
+    protected FieldPosition pos;
 
     public Obstacle(int col, int row, Field field){
-        pos = new Position(col, row, field);
+        pos = new FieldPosition(col, row, field);
     }
 
     @Override

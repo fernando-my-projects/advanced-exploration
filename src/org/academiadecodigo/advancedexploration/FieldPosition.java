@@ -1,18 +1,18 @@
 package org.academiadecodigo.advancedexploration;
 
-public class Position {
+public class FieldPosition {
 
     private int col;
     private int row;
     private Field field;
 
-    public Position(int col, int row, Field field){
+    public FieldPosition(int col, int row, Field field){
         this.col = col;
         this.row = row;
         this.field = field;
     }
 
-    public Position(int col, int row){
+    public FieldPosition(int col, int row){
         this.col = col;
         this.row = row;
     }
@@ -26,7 +26,7 @@ public class Position {
         return row;
     }
 
-    public boolean equals(Position pos) {
+    public boolean equals(FieldPosition pos) {
        if ((this.col == pos.getCol()) && (this.row == pos.getRow())){
            return true;
        } return false;

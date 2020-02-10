@@ -2,21 +2,19 @@ package org.academiadecodigo.advancedexploration.Entities;
 
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
-import org.academiadecodigo.advancedexploration.Obstacles.Obstacle;
-import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
-import org.academiadecodigo.advancedexploration.Position;
+import org.academiadecodigo.advancedexploration.FieldPosition;
 
 public class Player {
 
     private int energy = 500;
     private int points = 0;
-    private Position pos;
+    private FieldPosition pos;
     private boolean hasHat;
     private boolean hasWhip;
     private Field field;
 
     public Player(int col, int row, Field field){
-        pos = new Position(col, row, field);
+        pos = new FieldPosition(col, row, field);
         this.field = field;
     }
 
@@ -42,7 +40,7 @@ public class Player {
         this.points += points;
     }
 
-    public Position getPos() {
+    public FieldPosition getPos() {
         return pos;
     }
 

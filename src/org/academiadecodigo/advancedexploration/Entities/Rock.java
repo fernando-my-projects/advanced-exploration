@@ -1,17 +1,17 @@
 package org.academiadecodigo.advancedexploration.Entities;
 
 import org.academiadecodigo.advancedexploration.Field;
-import org.academiadecodigo.advancedexploration.Position;
+import org.academiadecodigo.advancedexploration.FieldPosition;
 
 public class Rock {
 
-    private Position pos;
+    private FieldPosition pos;
 
     public Rock(int col, int row, Field field){
-        pos = new Position(col, row, field);
+        pos = new FieldPosition(col, row, field);
     }
 
-    public Position getPos() {
+    public FieldPosition getPos() {
         return pos;
     }
 }
