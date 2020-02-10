@@ -20,4 +20,8 @@ public abstract class Item implements Interactable {
 
     public abstract void equip(Player player);
 
+    public FieldPosition getPos() {
+        return pos;
+    }
+
 }

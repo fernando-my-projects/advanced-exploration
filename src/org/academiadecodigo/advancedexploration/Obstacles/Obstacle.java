@@ -22,4 +22,8 @@ public abstract class Obstacle implements Interactable {
 
     public abstract void getFightResult(Player player);
 
+    public FieldPosition getPos() {
+        return pos;
+    }
+
 }
