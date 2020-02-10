@@ -24,5 +24,9 @@ public abstract class PointsInterest implements Interactable {
 
     public abstract void getExploreResult(Player player);
 
+    public FieldPosition getPos() {
+        return pos;
+    }
+
 
 }
