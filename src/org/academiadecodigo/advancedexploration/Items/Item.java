@@ -3,14 +3,14 @@ package org.academiadecodigo.advancedexploration.Items;
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
-import org.academiadecodigo.advancedexploration.Position;
+import org.academiadecodigo.advancedexploration.FieldPosition;
 
 public abstract class Item implements Interactable {
 
-    private Position pos;
+    private FieldPosition pos;
 
     public Item(int col, int row, Field field) {
-        pos = new Position(col, row, field);
+        pos = new FieldPosition(col, row, field);
     }
 
     @Override

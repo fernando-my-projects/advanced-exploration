@@ -1,14 +1,14 @@
 package org.academiadecodigo.advancedexploration.Entities;
 
 import org.academiadecodigo.advancedexploration.Field;
-import org.academiadecodigo.advancedexploration.Position;
+import org.academiadecodigo.advancedexploration.FieldPosition;
 
 public class HolyGrail {
 
-    private Position pos;
+    private FieldPosition pos;
 
     public HolyGrail(int col, int row, Field field){
-        pos = new Position(col, row, field);
+        pos = new FieldPosition(col, row, field);
     }
 
 }
