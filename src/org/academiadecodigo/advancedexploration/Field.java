@@ -16,10 +16,9 @@ public class Field {
     }
 
     public void init(){
-
         Rectangle rect = new Rectangle(PADDING, PADDING, width*cellSize, height*cellSize);
+         rect.fill();
 
-        rect.fill();
 
     }
 
