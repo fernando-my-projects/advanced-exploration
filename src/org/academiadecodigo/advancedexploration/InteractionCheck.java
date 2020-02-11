@@ -1,5 +1,6 @@
 package org.academiadecodigo.advancedexploration;
 
+import org.academiadecodigo.advancedexploration.Entities.HolyGrail;
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Items.Item;
 import org.academiadecodigo.advancedexploration.Obstacles.Obstacle;
@@ -10,28 +11,22 @@ public class InteractionCheck {
 
     public boolean checkPointsInterest (Player player, PointsInterest pointsInterest) {
 
-        if (player.getPos().equals(pointsInterest.getPos())) {
-            return true;
-        }
-        return false;
-
+        return player.getPos().equals(pointsInterest.getPos());
     }
 
     public boolean checkObstacles (Player player, Obstacle obstacle) {
 
-        if (player.getPos().equals(obstacle.getPos())) {
-            return true;
-        }
-        return false;
-
+        return player.getPos().equals(obstacle.getPos());
     }
 
     public boolean checkItem (Player player, Item item) {
 
-        if (player.getPos().equals(item.getPos())) {
-            return true;
-        }
-        return false;
-
+        return player.getPos().equals(item.getPos());
     }
+
+    public boolean checkGrail (Player player, HolyGrail grail){
+
+        return player.getPos().equals(grail.getPos());
+    }
+
 }

@@ -1,6 +1,17 @@
 package org.academiadecodigo.advancedexploration;
 
+import org.academiadecodigo.advancedexploration.Entities.HolyGrail;
+import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Entities.Rock;
+import org.academiadecodigo.advancedexploration.Items.Hat;
+import org.academiadecodigo.advancedexploration.Items.Item;
+import org.academiadecodigo.advancedexploration.Items.Whip;
+import org.academiadecodigo.advancedexploration.Obstacles.Nazi;
+import org.academiadecodigo.advancedexploration.Obstacles.Obstacle;
+import org.academiadecodigo.advancedexploration.Obstacles.Snake;
+import org.academiadecodigo.advancedexploration.PointsInterest.Crypt;
+import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
+import org.academiadecodigo.advancedexploration.PointsInterest.Pyramid;
 import org.academiadecodigo.advancedexploration.graphics.Rectangle;
 import org.academiadecodigo.advancedexploration.pictures.Picture;
 
@@ -9,18 +20,30 @@ public class Game {
     private Field field;
     private Rectangle grid;
     private Rock[] rocks;
+    private Player player;
+    private HolyGrail grail;
+    private PointsInterest[] pointsInterest;
+    private Obstacle[] obstacles;
+    private Item[] items;
+
 
     public Game (int cols, int rows){
         field = new Field(cols, rows);
         rocks = new Rock[16];
+        pointsInterest = new PointsInterest[2];
+        obstacles = new Obstacle[2];
+        items = new Item[2];
     }
 
     public void init(){
         field.init();
         makeRocks();
-
+        makePlayer();
+        makeGrail();
+        makeItems();
+        makeObstacles();
+        makePIs();
     }
-
 
     public void makeRocks(){
 
@@ -40,8 +63,33 @@ public class Game {
         rocks[13] = new Rock (4, 8,field);
         rocks[14] = new Rock (3, 8,field);
         rocks[15] = new Rock (5, 8,field);
-
     }
+
+    public void makePlayer(){
+        player = new Player(4,9, field);
+    }
+
+    public void makeGrail(){
+        grail = new HolyGrail(2,0, field);
+    }
+
+    public void makePIs(){
+        pointsInterest[0] = new Crypt(6,3, field);
+        pointsInterest[1] = new Pyramid(1, 6, field);
+    }
+
+    public void makeObstacles(){
+        obstacles[0] = new Nazi(5,2, field);
+        obstacles[1] = new Snake(2, 7, field);
+    }
+
+    public void makeItems(){
+        items[0] = new Whip(7, 5, field);
+        items[1] = new Hat(2, 3, field);
+    }
+
+
+
 
 
 }
