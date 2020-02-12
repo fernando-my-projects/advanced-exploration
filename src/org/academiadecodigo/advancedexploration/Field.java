@@ -1,6 +1,7 @@
 package org.academiadecodigo.advancedexploration;
 
 import org.academiadecodigo.advancedexploration.graphics.Rectangle;
+import org.academiadecodigo.advancedexploration.pictures.Picture;
 
 public class Field {
 
@@ -18,8 +19,12 @@ public class Field {
     public void init(){
         Rectangle rect = new Rectangle(PADDING, PADDING, width*cellSize, height*cellSize);
          rect.fill();
-
-
+         for(int i=0; i<width; i++){
+             for(int j=0; j<height; j++){
+                 Picture sandPixelArt = new Picture(PADDING+i*cellSize,PADDING+j*cellSize,"/Users/codecadet/Desktop/advanced-exploration/images/sand_pixelArt.png");
+                 sandPixelArt.draw();
+             }
+         }
     }
 
     public int getWidth() {
