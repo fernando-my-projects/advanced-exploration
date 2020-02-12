@@ -64,7 +64,7 @@ public class PossibleMoves {
 
     public boolean checkDown(Player player){
 
-        if (player.getPos().getRow() == (field.getHeight() - 1)){
+        if (player.getPos().getRow() == (field.getHeight() - 2)){
             return false;
         }
         //create position above player
