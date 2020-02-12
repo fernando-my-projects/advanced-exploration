@@ -7,6 +7,7 @@ import org.academiadecodigo.advancedexploration.keyboard.Keyboard;
 import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
 import org.academiadecodigo.advancedexploration.keyboard.KeyboardEventType;
 import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
+import org.academiadecodigo.advancedexploration.pictures.Picture;
 
 public class Main {
 
@@ -55,7 +56,6 @@ public class Main {
         Rectangle rect1 = new Rectangle(35, 10, 25, 100);
         rect1.setColor(Color.YELLOW);
         rect1.draw();*/
-
 
 
     }
