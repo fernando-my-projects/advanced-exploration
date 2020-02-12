@@ -1,5 +1,9 @@
 package org.academiadecodigo.advancedexploration;
 
+import org.academiadecodigo.advancedexploration.Entities.Player;
+import org.academiadecodigo.advancedexploration.Entities.Rock;
+import org.academiadecodigo.advancedexploration.graphics.Color;
+import org.academiadecodigo.advancedexploration.graphics.Rectangle;
 import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
 import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
 import org.academiadecodigo.advancedexploration.pictures.Picture;
@@ -7,9 +11,20 @@ import org.academiadecodigo.advancedexploration.pictures.Picture;
 public class PlayerMoves implements KeyboardHandler {
 
     private Picture nazi;
-    public PlayerMoves() {
-        nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
-        nazi.draw();
+    private PossibleMoves possibleMoves;
+    private Player player;
+    private Rectangle rect;
+    private Field field;
+
+    public PlayerMoves(Rock[] rocks, Field field, Player player) {
+        //nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
+        //nazi.draw();
+        this.field = field;
+        rect = new Rectangle(player.getPos().getX() + field.PADDING, player.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+        rect.setColor(Color.CYAN);
+        rect.fill();
+        possibleMoves = new PossibleMoves(rocks, field);
+        this.player = player;
     }
 
     @Override
@@ -17,16 +32,30 @@ public class PlayerMoves implements KeyboardHandler {
 
         switch (e.getKey()) {
             case KeyboardEvent.KEY_RIGHT:
-                nazi.translate(10,0);
+                if (possibleMoves.checkRight(player)) {
+                    player.getPos().setCol(1);
+                    rect.translate(field.getCellSize(),0);
+                }
+
                 break;
             case KeyboardEvent.KEY_LEFT:
-                nazi.translate(-10,0);
+                if (possibleMoves.checkLeft(player)) {
+                    player.getPos().setCol(-1);
+                    rect.translate(-field.getCellSize(),0);
+                }
+
                 break;
             case KeyboardEvent.KEY_DOWN:
-                nazi.translate(0,10);
+                if (possibleMoves.checkDown(player)) {
+                    player.getPos().setRow(1);
+                    rect.translate(0, field.getCellSize());
+                }
                 break;
             case KeyboardEvent.KEY_UP:
-                nazi.translate(0,-10);
+                if (possibleMoves.checkUp(player)) {
+                    player.getPos().setRow(-1);
+                    rect.translate(0, -field.getCellSize());
+                }
                 break;
         }
     }

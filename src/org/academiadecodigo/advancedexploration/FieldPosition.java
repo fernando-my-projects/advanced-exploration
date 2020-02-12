@@ -26,6 +26,22 @@ public class FieldPosition {
         return row;
     }
 
+    public void setCol(int num) {
+        col += num;
+    }
+
+    public void setRow(int num) {
+        row += num;
+    }
+
+    public int getX() {
+        return col * field.getCellSize();
+    }
+
+    public int getY() {
+        return row * field.getCellSize();
+    }
+
     public boolean equals(FieldPosition pos) {
        if ((this.col == pos.getCol()) && (this.row == pos.getRow())){
            return true;

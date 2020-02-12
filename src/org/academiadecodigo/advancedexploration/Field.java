@@ -6,7 +6,7 @@ public class Field {
 
     private int width;
     private int height;
-    private int cellSize = 25;
+    private int cellSize = 50;
     public static final int PADDING = 10;
 
 
@@ -28,5 +28,9 @@ public class Field {
 
     public int getHeight() {
         return height;
+    }
+
+    public int getCellSize() {
+        return cellSize;
     }
 }

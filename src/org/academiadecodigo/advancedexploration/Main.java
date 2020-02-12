@@ -17,9 +17,12 @@ public class Main {
         canvas.fill();
 
         Text code = new Text(250,100,"ArquiJones Adventure");
-        code.draw();
+        code.draw(); */
 
-        KeyboardHandler playerMoves = new PlayerMoves();
+        Game game = new Game(10, 11);
+        game.init();
+
+        KeyboardHandler playerMoves = new PlayerMoves(game.getRocks(), game.getField(), game.getPlayer());
         Keyboard k = new Keyboard(playerMoves);
 
         KeyboardEvent eventRight = new KeyboardEvent();
@@ -40,18 +43,18 @@ public class Main {
         KeyboardEvent eventDown = new KeyboardEvent();
         eventDown.setKey(KeyboardEvent.KEY_DOWN);
         eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        k.addEventListener(eventDown);*/
+        k.addEventListener(eventDown);
 
-        Game game = new Game(10, 11);
+        //Game game = new Game(10, 11);
 
-        game.init();
+        //game.init();
 
-        Rectangle rect = new Rectangle(10, 10, 25, 25);
+        /*Rectangle rect = new Rectangle(10, 10, 25, 25);
         rect.setColor(Color.BLUE);
         rect.fill();
         Rectangle rect1 = new Rectangle(35, 10, 25, 100);
         rect1.setColor(Color.YELLOW);
-        rect1.draw();
+        rect1.draw();*/
 
 
 
