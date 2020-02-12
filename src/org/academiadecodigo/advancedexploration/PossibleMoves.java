@@ -68,7 +68,7 @@ public class PossibleMoves {
             return false;
         }
         //create position above player
-        posToCompare = new FieldPosition(player.getPos().getCol(), player.getPos().getRow() - 1);
+        posToCompare = new FieldPosition(player.getPos().getCol(), player.getPos().getRow() + 1);
 
         for (Rock rock : rocks) {
 
