@@ -64,11 +64,11 @@ public class PossibleMoves {
 
     public boolean checkDown(Player player){
 
-        if (player.getPos().getRow() == (field.getHeight() - 1)){
+        if (player.getPos().getRow() == (field.getHeight() - 2)){
             return false;
         }
         //create position above player
-        posToCompare = new FieldPosition(player.getPos().getCol(), player.getPos().getRow() - 1);
+        posToCompare = new FieldPosition(player.getPos().getCol(), player.getPos().getRow() + 1);
 
         for (Rock rock : rocks) {
 
