@@ -22,11 +22,12 @@ public class Game {
     private Rectangle grid;
     private Rock[] rocks;
     private Player player;
-    private HolyGrail grail;
-    private PointsInterest[] pointsInterest;
-    private Obstacle[] obstacles;
-    private Item[] items;
+    private Interactable grail;
+    private Interactable[] pointsInterest;
+    private Interactable[] obstacles;
+    private Interactable[] items;
     private Rectangle rect;
+    private boolean gameOver = false;
 
 
     public Game (int cols, int rows){
@@ -112,7 +113,38 @@ public class Game {
         items[1] = new Hat(2, 3, field);
     }
 
+    public void interactionChecker(){
 
+        for (Interactable pi : pointsInterest) {
+
+            if (player.getPos().equals(pi.getPos())){
+                pi.interact(player);
+                return;
+            }
+        }
+
+        for (Interactable obs : obstacles){
+
+            if (player.getPos().equals(obs.getPos())){
+                obs.interact(player);
+                return;
+            }
+        }
+
+        for (Interactable item : items){
+
+            if (player.getPos().equals(item.getPos())){
+                item.interact(player);
+                return;
+            }
+        }
+
+        if (player.getPos().equals(grail.getPos())){
+            grail.interact(player);
+            gameOver = true;
+            return;
+        }
+    }
 
 
 
