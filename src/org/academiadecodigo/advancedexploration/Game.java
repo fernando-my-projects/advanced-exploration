@@ -14,7 +14,11 @@ import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
 import org.academiadecodigo.advancedexploration.PointsInterest.Pyramid;
 import org.academiadecodigo.advancedexploration.graphics.Color;
 import org.academiadecodigo.advancedexploration.graphics.Rectangle;
-import org.academiadecodigo.advancedexploration.pictures.Picture;
+import org.academiadecodigo.advancedexploration.graphics.Text;
+import org.academiadecodigo.advancedexploration.keyboard.Keyboard;
+import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
+import org.academiadecodigo.advancedexploration.keyboard.KeyboardEventType;
+import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
 
 public class Game {
 
@@ -27,7 +31,8 @@ public class Game {
     private Interactable[] obstacles;
     private Interactable[] items;
     private Rectangle rect;
-    private boolean gameOver = false;
+    private boolean gameOver;
+    private Text score;
 
 
     public Game (int cols, int rows){
@@ -46,16 +51,76 @@ public class Game {
         makeItems();
         makeObstacles();
         makePIs();
-        printRocks();
+        printEntities();
+        keyboardPresses();
+        score = new Text(435, 510, ""+player.getPoints());
+        score.draw();
+    }
+
+    public void start() {
+        gameOver = false;
+        init();
+        while (!gameOver) {
+            interactionChecker();
+            printScore();
+        }
+        endGame();
+
+        //End Screen here
+    }
+
+    public void printScore(){
+        //Prints Score: => int score
+        //score.delete();
+        //score = new Text(435, 510, ""+player.getPoints());
+        score.setText(""+player.getPoints());
+        score.draw();
     }
 
     public void printRocks() {
-
         for (Rock r : rocks) {
             rect = new Rectangle(r.getPos().getX() + field.PADDING, r.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
             rect.setColor(Color.MAGENTA);
             rect.fill();
         }
+    }
+
+    public void printPIs(){
+        for (Interactable pi : pointsInterest) {
+            Rectangle r = new Rectangle(pi.getPos().getX() + field.PADDING, pi.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+            r.fill();
+            r.setColor(Color.ORANGE);
+        }
+    }
+
+    public void printObstacles(){
+        for (Interactable obstacle : obstacles) {
+            Rectangle r = new Rectangle(obstacle.getPos().getX() + field.PADDING, obstacle.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+            r.fill();
+            r.setColor(Color.BLACK);
+        }
+    }
+
+    public void printItems(){
+        for (Interactable item : items) {
+            Rectangle r = new Rectangle(item.getPos().getX() + field.PADDING, item.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+            r.fill();
+            r.setColor(Color.RED);
+        }
+    }
+
+    public void printGrail(){
+        Rectangle r = new Rectangle(grail.getPos().getX() + field.PADDING, grail.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+        r.fill();
+        r.setColor(Color.LIGHT_GRAY);
+    }
+
+    public void printEntities() {
+        printRocks();
+        printPIs();
+        printObstacles();
+        printItems();
+        printGrail();
     }
 
     public void makeRocks(){
@@ -116,34 +181,70 @@ public class Game {
     public void interactionChecker(){
 
         for (Interactable pi : pointsInterest) {
-
-            if (player.getPos().equals(pi.getPos())){
+            if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated()){
                 pi.interact(player);
+                printScore();
+                player.setScoreNotUpdated(true);
                 return;
             }
         }
 
         for (Interactable obs : obstacles){
-
-            if (player.getPos().equals(obs.getPos())){
+            if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated()){
                 obs.interact(player);
+                printScore();
+                player.setScoreNotUpdated(true);
                 return;
             }
         }
 
         for (Interactable item : items){
-
-            if (player.getPos().equals(item.getPos())){
+            if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
                 item.interact(player);
+                printScore();
+                player.setScoreNotUpdated(true);
                 return;
             }
         }
 
-        if (player.getPos().equals(grail.getPos())){
+        if (player.getPos().equals(grail.getPos()) && !player.getScoreNotUpdated()){
             grail.interact(player);
             gameOver = true;
+            printScore();
             return;
         }
+    }
+
+    public void endGame(){
+        field.setClear();
+        score = new Text(150, 250, "The End. \nYour score was: "+player.getPoints());
+        score.setColor(Color.BLACK);
+        score.draw();
+    }
+
+    public void keyboardPresses(){
+        KeyboardHandler playerMoves = new PlayerMoves(getRocks(), getField(), getPlayer());
+        Keyboard k = new Keyboard(playerMoves);
+
+        KeyboardEvent eventRight = new KeyboardEvent();
+        eventRight.setKey(KeyboardEvent.KEY_RIGHT);
+        eventRight.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventRight);
+
+        KeyboardEvent eventLeft = new KeyboardEvent();
+        eventLeft.setKey(KeyboardEvent.KEY_LEFT);
+        eventLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventLeft);
+
+        KeyboardEvent eventUp = new KeyboardEvent();
+        eventUp.setKey(KeyboardEvent.KEY_UP);
+        eventUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventUp);
+
+        KeyboardEvent eventDown = new KeyboardEvent();
+        eventDown.setKey(KeyboardEvent.KEY_DOWN);
+        eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventDown);
     }
 
 

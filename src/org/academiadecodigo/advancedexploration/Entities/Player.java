@@ -12,6 +12,7 @@ public class Player {
     private boolean hasHat;
     private boolean hasWhip;
     private Field field;
+    private boolean scoreNotUpdated = false;
 
     public Player(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
@@ -25,6 +26,10 @@ public class Player {
     public void putOnHat(){
         hasHat = true;
         points += 50;
+    }
+
+    public int getPoints(){
+        return points;
     }
 
     public void pickWhip(){
@@ -46,5 +51,13 @@ public class Player {
 
     public Field getField() {
         return field;
+    }
+
+    public void setScoreNotUpdated(boolean condition){
+        scoreNotUpdated = condition;
+    }
+
+    public boolean getScoreNotUpdated(){
+        return scoreNotUpdated;
     }
 }

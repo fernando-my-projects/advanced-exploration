@@ -15,6 +15,7 @@ public class PlayerMoves implements KeyboardHandler {
     private Player player;
     private Rectangle rect;
     private Field field;
+    private boolean scoreNotUpdated = false;
 
     public PlayerMoves(Rock[] rocks, Field field, Player player) {
         //nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
@@ -35,6 +36,7 @@ public class PlayerMoves implements KeyboardHandler {
                 if (possibleMoves.checkRight(player)) {
                     player.getPos().setCol(1);
                     rect.translate(field.getCellSize(),0);
+                    player.setScoreNotUpdated(false);
                 }
 
                 break;
@@ -42,6 +44,7 @@ public class PlayerMoves implements KeyboardHandler {
                 if (possibleMoves.checkLeft(player)) {
                     player.getPos().setCol(-1);
                     rect.translate(-field.getCellSize(),0);
+                    player.setScoreNotUpdated(false);
                 }
 
                 break;
@@ -49,12 +52,14 @@ public class PlayerMoves implements KeyboardHandler {
                 if (possibleMoves.checkDown(player)) {
                     player.getPos().setRow(1);
                     rect.translate(0, field.getCellSize());
+                    player.setScoreNotUpdated(false);
                 }
                 break;
             case KeyboardEvent.KEY_UP:
                 if (possibleMoves.checkUp(player)) {
                     player.getPos().setRow(-1);
                     rect.translate(0, -field.getCellSize());
+                    player.setScoreNotUpdated(false);
                 }
                 break;
         }
@@ -64,5 +69,4 @@ public class PlayerMoves implements KeyboardHandler {
     public void keyReleased(KeyboardEvent e) {
 
     }
-
 }

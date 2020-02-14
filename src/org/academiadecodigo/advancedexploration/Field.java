@@ -1,5 +1,6 @@
 package org.academiadecodigo.advancedexploration;
 
+import org.academiadecodigo.advancedexploration.graphics.Color;
 import org.academiadecodigo.advancedexploration.graphics.Rectangle;
 import org.academiadecodigo.advancedexploration.pictures.Picture;
 
@@ -9,6 +10,7 @@ public class Field {
     private int height;
     private int cellSize = 50;
     public static final int PADDING = 10;
+    private Rectangle rect;
 
 
     public Field (int cols, int rows){
@@ -17,7 +19,7 @@ public class Field {
     }
 
     public void init(){
-        Rectangle rect = new Rectangle(PADDING, PADDING, width*cellSize, height*cellSize);
+        rect = new Rectangle(PADDING, PADDING, width*cellSize, height*cellSize);
          rect.fill();
          for(int i=0; i<width; i++){
              for(int j=0; j<height; j++){
@@ -25,6 +27,12 @@ public class Field {
                  sandPixelArt.draw();
              }
          }
+    }
+
+    public void setClear() {
+        rect = new Rectangle(PADDING, PADDING, width*cellSize, height*cellSize);
+        rect.setColor(Color.WHITE);
+        rect.fill();
     }
 
     public int getWidth() {

@@ -21,30 +21,7 @@ public class Main {
         code.draw(); */
 
         Game game = new Game(10, 11);
-        game.init();
-
-        KeyboardHandler playerMoves = new PlayerMoves(game.getRocks(), game.getField(), game.getPlayer());
-        Keyboard k = new Keyboard(playerMoves);
-
-        KeyboardEvent eventRight = new KeyboardEvent();
-        eventRight.setKey(KeyboardEvent.KEY_RIGHT);
-        eventRight.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        k.addEventListener(eventRight);
-
-        KeyboardEvent eventLeft = new KeyboardEvent();
-        eventLeft.setKey(KeyboardEvent.KEY_LEFT);
-        eventLeft.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        k.addEventListener(eventLeft);
-
-        KeyboardEvent eventUp = new KeyboardEvent();
-        eventUp.setKey(KeyboardEvent.KEY_UP);
-        eventUp.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        k.addEventListener(eventUp);
-
-        KeyboardEvent eventDown = new KeyboardEvent();
-        eventDown.setKey(KeyboardEvent.KEY_DOWN);
-        eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
-        k.addEventListener(eventDown);
+        game.start();
 
         //Game game = new Game(10, 11);
 

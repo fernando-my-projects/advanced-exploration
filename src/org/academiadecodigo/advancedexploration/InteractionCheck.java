@@ -9,24 +9,19 @@ import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
 public class InteractionCheck {
 
 
-    public boolean checkPointsInterest (Player player, PointsInterest pointsInterest) {
-
+    public static boolean checkPointsInterest (Player player, PointsInterest pointsInterest) {
         return player.getPos().equals(pointsInterest.getPos());
     }
 
-    public boolean checkObstacles (Player player, Obstacle obstacle) {
-
+    public static boolean checkObstacles (Player player, Obstacle obstacle) {
         return player.getPos().equals(obstacle.getPos());
     }
 
-    public boolean checkItem (Player player, Item item) {
-
+    public static boolean checkItem (Player player, Item item) {
         return player.getPos().equals(item.getPos());
     }
 
-    public boolean checkGrail (Player player, HolyGrail grail){
-
+    public static boolean checkGrail (Player player, HolyGrail grail){
         return player.getPos().equals(grail.getPos());
     }
-
 }
