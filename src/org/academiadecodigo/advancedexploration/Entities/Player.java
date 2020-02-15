@@ -13,6 +13,7 @@ public class Player {
     private boolean hasWhip;
     private Field field;
     private boolean scoreNotUpdated = false;
+    private boolean hasMoved;
 
     public Player(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
@@ -76,5 +77,13 @@ public class Player {
 
     public boolean getScoreNotUpdated(){
         return scoreNotUpdated;
+    }
+
+    public void setHasMoved(boolean state) {
+        hasMoved = state;
+    }
+
+    public boolean hasMoved(){
+        return hasMoved;
     }
 }

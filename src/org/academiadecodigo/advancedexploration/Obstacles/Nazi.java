@@ -16,6 +16,7 @@ public class Nazi extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
+        erase();
         player.setPoints(reward);
         player.setEnergy(-damage);
     }

@@ -14,6 +14,7 @@ public class Hat extends Item {
 
     @Override
     public void equip(Player player) {
+        erase();
         player.putOnHat();
     }
 
