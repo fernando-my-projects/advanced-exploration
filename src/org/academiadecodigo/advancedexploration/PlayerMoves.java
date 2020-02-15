@@ -30,41 +30,48 @@ public class PlayerMoves implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent e) {
 
-        switch (e.getKey()) {
-            case KeyboardEvent.KEY_RIGHT:
-                if (possibleMoves.checkRight(player)) {
-                    player.getPos().setCol(1);
-                    picPlayer.translate(field.getCellSize(),0);
-                    player.setScoreNotUpdated(false);
-                    player.setEnergy(energySpentMoving);
-                }
+        if (!player.hasMoved()) {
 
-                break;
-            case KeyboardEvent.KEY_LEFT:
-                if (possibleMoves.checkLeft(player)) {
-                    player.getPos().setCol(-1);
-                    picPlayer.translate(-field.getCellSize(),0);
-                    player.setScoreNotUpdated(false);
-                    player.setEnergy(energySpentMoving);
-                }
+            switch (e.getKey()) {
+                case KeyboardEvent.KEY_RIGHT:
+                    if (possibleMoves.checkRight(player)) {
+                        player.getPos().setCol(1);
+                        rect.translate(field.getCellSize(), 0);
+                        player.setScoreNotUpdated(false);
+                        player.setEnergy(energySpentMoving);
+                        player.setHasMoved(true);
+                    }
 
-                break;
-            case KeyboardEvent.KEY_DOWN:
-                if (possibleMoves.checkDown(player)) {
-                    player.getPos().setRow(1);
-                    picPlayer.translate(0, field.getCellSize());
-                    player.setScoreNotUpdated(false);
-                    player.setEnergy(energySpentMoving);
-                }
-                break;
-            case KeyboardEvent.KEY_UP:
-                if (possibleMoves.checkUp(player)) {
-                    player.getPos().setRow(-1);
-                    picPlayer.translate(0, -field.getCellSize());
-                    player.setScoreNotUpdated(false);
-                    player.setEnergy(energySpentMoving);
-                }
-                break;
+                    break;
+                case KeyboardEvent.KEY_LEFT:
+                    if (possibleMoves.checkLeft(player)) {
+                        player.getPos().setCol(-1);
+                        rect.translate(-field.getCellSize(), 0);
+                        player.setScoreNotUpdated(false);
+                        player.setEnergy(energySpentMoving);
+                        player.setHasMoved(true);
+                    }
+
+                    break;
+                case KeyboardEvent.KEY_DOWN:
+                    if (possibleMoves.checkDown(player)) {
+                        player.getPos().setRow(1);
+                        rect.translate(0, field.getCellSize());
+                        player.setScoreNotUpdated(false);
+                        player.setEnergy(energySpentMoving);
+                        player.setHasMoved(true);
+                    }
+                    break;
+                case KeyboardEvent.KEY_UP:
+                    if (possibleMoves.checkUp(player)) {
+                        player.getPos().setRow(-1);
+                        rect.translate(0, -field.getCellSize());
+                        player.setScoreNotUpdated(false);
+                        player.setEnergy(energySpentMoving);
+                        player.setHasMoved(true);
+                    }
+                    break;
+            }
         }
     }
 
@@ -73,5 +80,13 @@ public class PlayerMoves implements KeyboardHandler {
         /**
          * Not Implemented
          */
+    }
+
+    public void sleep(int time) {
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

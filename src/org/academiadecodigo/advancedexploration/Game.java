@@ -38,8 +38,11 @@ public class Game {
     private Interactable[] items;
     private Rectangle rect;
     private boolean gameOver;
+    private boolean gameWon;
     private Text score;
     private Text energy;
+    private Text victory;
+    private Text lose;
     private Text pickedUpItems;
     private File audioFile;
     private Clip audioClipIntro;
@@ -68,9 +71,10 @@ public class Game {
     }
 
     private void initializeTexts() {
-        score = new Text(435, 520, ""+player.getPoints());
+
+        score = new Text(400, 520, ""+player.getPoints());
         score.draw();
-        energy = new Text(435, 535, ""+player.getEnergy());
+        energy = new Text(400, 535, ""+player.getEnergy());
         energy.draw();
         pickedUpItems = new Text(20, 527, "You haven't picked up anything yet.");
         pickedUpItems.draw();
@@ -79,11 +83,18 @@ public class Game {
     public void start() {
         playMusic();
         gameOver = false;
+        gameWon = false;
         welcomeScreen();
         init();
-        while (!gameOver && (player.getEnergy() >= 0) && (player.getPoints() >= 0)) {
+
+        while (true) {
+            player.setHasMoved(false);
             interactionChecker();
             printScores();
+            if (gameOver || player.getEnergy() <= 0){
+                break;
+            }
+            sleep(500);
         }
         endGame();
         audioClipIntro.close();
@@ -128,7 +139,7 @@ public class Game {
         energy.setText("Energy: "+player.getEnergy());
         energy.draw();
 
-        if (player.hasHat() || player.hasWhip()) {
+        /*if (player.hasHat() || player.hasWhip()) {
             String returnStr = "You have picked up: ";
             if (player.hasHat()) {
                 returnStr+="Hat. ";
@@ -138,7 +149,7 @@ public class Game {
             }
 
             pickedUpItems.setText(returnStr);
-        }
+        }*/
     }
 
     public void printRocks() {
@@ -236,8 +247,8 @@ public class Game {
 
         for (Interactable pi : pointsInterest) {
             if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated()){
+                pickedUpItems.delete();
                 pi.interact(player);
-                printScores();
                 player.setScoreNotUpdated(true);
                 return;
             }
@@ -245,28 +256,30 @@ public class Game {
 
         for (Interactable obs : obstacles){
             if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated()){
+                pickedUpItems.delete();
                 obs.interact(player);
-                obs.erase();
-                printScores();
                 player.setScoreNotUpdated(true);
+
                 return;
             }
         }
 
         for (Interactable item : items){
             if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
+
                 playWhipMusic();
+                pickedUpItems.delete();
                 item.interact(player);
-                item.erase();
-                printScores();
                 player.setScoreNotUpdated(true);
                 return;
             }
         }
 
         if (player.getPos().equals(grail.getPos()) && !player.getScoreNotUpdated()){
+            pickedUpItems.delete();
             grail.interact(player);
             gameOver = true;
+            gameWon = true;
             printScores();
             return;
         }
@@ -274,23 +287,38 @@ public class Game {
 
     public void endGame(){
         field.setClear();
-        String scoreString = "The End. Your Score was: " + player.getPoints();
+        String scoreString = "Your Score was: " + player.getPoints();
         String energyString = "Your Remaining Energy was: " + player.getEnergy();
+        String victoryString = "";
+        String loseString = "";
 
         if (player.getEnergy() <= 0) {
             player.setToZero();
+            loseString = "You lost the game....";
             energyString = "You Ran Out of Energy: " + player.getEnergy();
 
         }
-        if (player.getPoints() < 0) {
+        /*if (player.getPoints() < 0) {
             scoreString = "You Ran Out of Points! (" + player.getPoints() + ")";
+        }*/
+        if (gameWon) {
+            victoryString = "Congratulations! You won the game!";
         }
-        score = new Text(150, 250, scoreString);
-        score.setColor(Color.BLACK);
-        score.draw();
+
+
+        lose = new Text(150, 200, loseString);
+        lose.setColor(Color.BLACK);
+        lose.draw();
+        victory = new Text(150, 200, victoryString);
+        victory.setColor(Color.BLACK);
+        victory.draw();
         energy = new Text(150, 300, energyString);
         energy.setColor(Color.BLACK);
         energy.draw();
+        score = new Text(150, 250, scoreString);
+        score.setColor(Color.BLACK);
+        score.draw();
+
 
     }
 

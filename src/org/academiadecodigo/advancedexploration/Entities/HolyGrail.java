@@ -17,6 +17,8 @@ public class HolyGrail implements Interactable {
 
     public HolyGrail(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
+        cellSize = field.getCellSize();
+        PADDING = field.PADDING;
         picInit();
     }
 

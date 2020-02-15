@@ -15,6 +15,7 @@ public class Whip extends Item {
 
     @Override
     public void equip(Player player) {
+        erase();
         player.pickWhip();
     }
 

@@ -2,10 +2,10 @@ package org.academiadecodigo.advancedexploration.Obstacles;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
-import org.academiadecodigo.advancedexploration.printRunTimeInfo;
+import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Snake extends Obstacle {
 
@@ -19,7 +19,8 @@ public class Snake extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
-        printRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
+        erase();
+        PrintRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
         player.setEnergy(-damage);
         player.setPoints(reward);
     }

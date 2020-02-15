@@ -2,9 +2,11 @@ package org.academiadecodigo.advancedexploration.Obstacles;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
+import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Nazi extends Obstacle {
 
@@ -17,6 +19,8 @@ public class Nazi extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
+        PrintRunTimeInfo.print("You fought a Nazi. -" + damage + " Energy, +" + reward + " points!");
+        erase();
         player.setPoints(reward);
         player.setEnergy(-damage);
     }

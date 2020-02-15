@@ -2,9 +2,11 @@ package org.academiadecodigo.advancedexploration.PointsInterest;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
+import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Crypt extends PointsInterest {
 
@@ -18,12 +20,15 @@ public class Crypt extends PointsInterest {
 
     @Override
     public void getExploreResult(Player player) {
+
        if (Math.random() < risk){
            player.setEnergy(-penalty);
+           PrintRunTimeInfo.print("You entered in a crypt. You lost -" + penalty + " Energy...");
            return;
        }
 
        player.setPoints(reward);
+       PrintRunTimeInfo.print("You entered in a crypt. You won +" + reward + " points!");
     }
 
     @Override
