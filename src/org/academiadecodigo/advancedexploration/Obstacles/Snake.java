@@ -2,6 +2,7 @@ package org.academiadecodigo.advancedexploration.Obstacles;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
+import org.academiadecodigo.advancedexploration.printRunTimeInfo;
 
 public class Snake extends Obstacle {
 
@@ -14,6 +15,7 @@ public class Snake extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
+        printRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
         player.setEnergy(-damage);
         player.setPoints(reward);
     }

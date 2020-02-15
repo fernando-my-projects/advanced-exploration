@@ -16,12 +16,14 @@ public class PlayerMoves implements KeyboardHandler {
     private Rectangle rect;
     private Field field;
     private boolean scoreNotUpdated = false;
+    private int energySpentMoving = -20;
 
     public PlayerMoves(Rock[] rocks, Field field, Player player) {
         //nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
         //nazi.draw();
         this.field = field;
-        rect = new Rectangle(player.getPos().getX() + field.PADDING, player.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
+        rect = new Rectangle(player.getPos().getX() + field.PADDING, player.getPos().getY()
+                + field.PADDING, field.getCellSize(), field.getCellSize());
         rect.setColor(Color.CYAN);
         rect.fill();
         possibleMoves = new PossibleMoves(rocks, field);
@@ -37,6 +39,7 @@ public class PlayerMoves implements KeyboardHandler {
                     player.getPos().setCol(1);
                     rect.translate(field.getCellSize(),0);
                     player.setScoreNotUpdated(false);
+                    player.setEnergy(energySpentMoving);
                 }
 
                 break;
@@ -45,6 +48,7 @@ public class PlayerMoves implements KeyboardHandler {
                     player.getPos().setCol(-1);
                     rect.translate(-field.getCellSize(),0);
                     player.setScoreNotUpdated(false);
+                    player.setEnergy(energySpentMoving);
                 }
 
                 break;
@@ -53,6 +57,7 @@ public class PlayerMoves implements KeyboardHandler {
                     player.getPos().setRow(1);
                     rect.translate(0, field.getCellSize());
                     player.setScoreNotUpdated(false);
+                    player.setEnergy(energySpentMoving);
                 }
                 break;
             case KeyboardEvent.KEY_UP:
@@ -60,6 +65,7 @@ public class PlayerMoves implements KeyboardHandler {
                     player.getPos().setRow(-1);
                     rect.translate(0, -field.getCellSize());
                     player.setScoreNotUpdated(false);
+                    player.setEnergy(energySpentMoving);
                 }
                 break;
         }
@@ -67,6 +73,8 @@ public class PlayerMoves implements KeyboardHandler {
 
     @Override
     public void keyReleased(KeyboardEvent e) {
-
+        /**
+         * Not Implemented
+         */
     }
 }

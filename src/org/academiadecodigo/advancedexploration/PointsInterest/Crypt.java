@@ -17,7 +17,8 @@ public class Crypt extends PointsInterest {
        if (Math.random() < risk){
            player.setEnergy(-penalty);
            return;
-       } player.setPoints(reward);
+       }
 
+       player.setPoints(reward);
     }
 }

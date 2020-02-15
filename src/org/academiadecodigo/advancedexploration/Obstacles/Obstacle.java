@@ -39,7 +39,7 @@ public abstract class Obstacle implements Interactable {
             damage = num;
         }
 
-        public 
+        //public
 
     }
 

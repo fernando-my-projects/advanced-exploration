@@ -2,6 +2,7 @@ package org.academiadecodigo.advancedexploration.PointsInterest;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
+import org.academiadecodigo.advancedexploration.printRunTimeInfo;
 
 public class Pyramid extends PointsInterest {
 
@@ -16,7 +17,10 @@ public class Pyramid extends PointsInterest {
     public void getExploreResult(Player player) {
         if (Math.random() < risk){
             player.setEnergy(-penalty);
+            printRunTimeInfo.print("You got unlucky... You lost " + penalty + " Energy... You got +" + reward + " points.");
             return;
-        } player.setPoints(reward);
+        }
+        printRunTimeInfo.print("You got +" + reward + " points.");
+        player.setPoints(reward);
     }
 }

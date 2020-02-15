@@ -32,9 +32,21 @@ public class Player {
         return points;
     }
 
+    public int getEnergy(){
+        return energy;
+    }
+
     public void pickWhip(){
         hasWhip = true;
         points += 50;
+    }
+
+    public boolean hasHat() {
+        return hasHat;
+    }
+
+    public boolean hasWhip() {
+        return hasWhip;
     }
 
     public void setEnergy(int energy) {
