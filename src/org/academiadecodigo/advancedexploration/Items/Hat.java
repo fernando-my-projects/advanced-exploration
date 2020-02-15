@@ -7,6 +7,7 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Hat extends Item {
+    private boolean isPicked = false;
 
     public Hat(int col, int row, Field field){
         super(col, row, field);
@@ -16,7 +17,10 @@ public class Hat extends Item {
     @Override
     public void equip(Player player) {
         erase();
-        player.putOnHat();
+        if (!isPicked) {
+            player.putOnHat();
+        }
+        isPicked = true;
     }
 
     @Override

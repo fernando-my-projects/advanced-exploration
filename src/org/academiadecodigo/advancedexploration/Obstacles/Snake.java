@@ -9,7 +9,7 @@ import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Snake extends Obstacle {
-
+    private boolean isPicked = false;
 
     public Snake(int col, int row, Field field){
         super(col, row, field);
@@ -20,10 +20,13 @@ public class Snake extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
-        erase();
-        PrintRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
-        player.setEnergy(-damage);
-        player.setPoints(reward);
+        if(!isPicked) {
+            erase();
+            PrintRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
+            player.setEnergy(-damage);
+            player.setPoints(reward);
+            isPicked = true;
+        }
     }
 
     @Override
