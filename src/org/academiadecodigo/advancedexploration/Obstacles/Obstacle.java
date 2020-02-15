@@ -26,4 +26,21 @@ public abstract class Obstacle implements Interactable {
         return pos;
     }
 
+
+    public enum ObstacleType {
+        NAZI("N", 40),
+        SNAKE("S", 20);
+
+        String type;
+        int damage;
+
+        ObstacleType(String string, int num){
+            type = string;
+            damage = num;
+        }
+
+        //public
+
+    }
+
 }
