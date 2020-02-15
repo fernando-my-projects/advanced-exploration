@@ -73,9 +73,15 @@ public class Game {
         gameWon = false;
         welcomeScreen();
         init();
-        while (!gameOver && (player.getEnergy() > 0)) {
+
+        while (true) {
+            player.setHasMoved(false);
             interactionChecker();
             printScores();
+            if (gameOver || player.getEnergy() <= 0){
+                break;
+            }
+            sleep(500);
         }
         endGame();
     }
@@ -93,7 +99,7 @@ public class Game {
         timer.grow(16, 23);
 
         //10 secs counter
-        for(int time = 9; time >= 0; time--) {
+        for(int time = 2; time >= 0; time--) {
             sleep(1000);
             timer.setText(""+time);
         }
@@ -227,7 +233,6 @@ public class Game {
             if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated()){
                 pickedUpItems.delete();
                 pi.interact(player);
-                printScores();
                 player.setScoreNotUpdated(true);
                 return;
             }
@@ -237,8 +242,6 @@ public class Game {
             if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated()){
                 pickedUpItems.delete();
                 obs.interact(player);
-                obs.erase();
-                printScores();
                 player.setScoreNotUpdated(true);
 
                 return;
@@ -249,8 +252,6 @@ public class Game {
             if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
                 pickedUpItems.delete();
                 item.interact(player);
-                item.erase();
-                printScores();
                 player.setScoreNotUpdated(true);
                 return;
             }

@@ -19,6 +19,7 @@ public class Nazi extends Obstacle {
     @Override
     public void getFightResult(Player player) {
         PrintRunTimeInfo.print("You fought a Nazi. -" + damage + " Energy, +" + reward + " points!");
+        erase();
         player.setPoints(reward);
         player.setEnergy(-damage);
     }

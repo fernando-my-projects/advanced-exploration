@@ -33,6 +33,7 @@ public class HolyGrail implements Interactable {
     public void picInit() {
         rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
         rect.setColor(Color.LIGHT_GRAY);
+        rect.draw();
     }
 
     @Override

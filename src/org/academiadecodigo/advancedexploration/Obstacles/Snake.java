@@ -19,7 +19,8 @@ public class Snake extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
-        PrintRunTimeInfo.print("You fought a Nazi. -" + damage + " Energy, +" + reward + " points!");
+        erase();
+        PrintRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
         player.setEnergy(-damage);
         player.setPoints(reward);
     }
