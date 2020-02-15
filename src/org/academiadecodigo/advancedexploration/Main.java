@@ -1,14 +1,5 @@
 package org.academiadecodigo.advancedexploration;
 
-import org.academiadecodigo.advancedexploration.graphics.Color;
-import org.academiadecodigo.advancedexploration.graphics.Rectangle;
-import org.academiadecodigo.advancedexploration.graphics.Text;
-import org.academiadecodigo.advancedexploration.keyboard.Keyboard;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardEventType;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
-import org.academiadecodigo.advancedexploration.pictures.Picture;
-
 public class Main {
 
     public static void main(String[] args) {

@@ -2,11 +2,11 @@ package org.academiadecodigo.advancedexploration;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Entities.Rock;
-import org.academiadecodigo.advancedexploration.graphics.Color;
-import org.academiadecodigo.advancedexploration.graphics.Rectangle;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
-import org.academiadecodigo.advancedexploration.pictures.Picture;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PlayerMoves implements KeyboardHandler {
 

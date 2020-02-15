@@ -3,13 +3,21 @@ package org.academiadecodigo.advancedexploration.Entities;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.FieldPosition;
 import org.academiadecodigo.advancedexploration.Interactable;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class HolyGrail implements Interactable {
 
     private FieldPosition pos;
+    protected int cellSize;
+    protected int PADDING;
+    protected Rectangle rect;
 
     public HolyGrail(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
+        picInit();
+        cellSize = field.getCellSize();
+        PADDING = field.PADDING;
     }
 
     @Override
@@ -19,5 +27,21 @@ public class HolyGrail implements Interactable {
 
     public FieldPosition getPos() {
         return pos;
+    }
+
+    @Override
+    public void picInit() {
+        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
+        rect.setColor(Color.LIGHT_GRAY);
+    }
+
+    @Override
+    public void draw() {
+        rect.fill();
+    }
+
+    @Override
+    public void erase() {
+        rect.delete();
     }
 }

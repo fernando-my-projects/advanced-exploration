@@ -1,6 +1,6 @@
 package org.academiadecodigo.advancedexploration;
 
-import org.academiadecodigo.advancedexploration.graphics.Text;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class printRunTimeInfo {
     public static void print(String s) {

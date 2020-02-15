@@ -2,11 +2,14 @@ package org.academiadecodigo.advancedexploration.Obstacles;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public class Nazi extends Obstacle {
 
     public Nazi(int col, int row, Field field){
         super(col, row, field);
+        picInit();
         damage = 40;
         reward = damage*2;
     }
@@ -15,5 +18,21 @@ public class Nazi extends Obstacle {
     public void getFightResult(Player player) {
         player.setPoints(-damage);
         player.setEnergy(reward);
+    }
+
+    @Override
+    public void picInit() {
+        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
+        rect.setColor(Color.RED);
+    }
+
+    @Override
+    public void draw() {
+        rect.fill();
+    }
+
+    @Override
+    public void erase() {
+        rect.delete();
     }
 }
