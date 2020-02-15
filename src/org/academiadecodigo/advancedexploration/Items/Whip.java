@@ -21,7 +21,7 @@ public class Whip extends Item {
     @Override
     public void picInit() {
         rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.ORANGE);
+        rect.setColor(Color.BLACK);
     }
 
     @Override
