@@ -4,15 +4,21 @@ import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.FieldPosition;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public abstract class Obstacle implements Interactable {
 
     protected int damage;
     protected int reward;
     protected FieldPosition pos;
+    protected Rectangle rect;
+    protected int cellSize;
+    protected int PADDING;
 
     public Obstacle(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
+        cellSize = field.getCellSize();
+        PADDING = field.PADDING;
     }
 
     @Override
@@ -26,7 +32,7 @@ public abstract class Obstacle implements Interactable {
         return pos;
     }
 
-
+/*
     public enum ObstacleType {
         NAZI("N", 40),
         SNAKE("S", 20);
@@ -41,6 +47,6 @@ public abstract class Obstacle implements Interactable {
 
         //public
 
-    }
+    }*/
 
 }

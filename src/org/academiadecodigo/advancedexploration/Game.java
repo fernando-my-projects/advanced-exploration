@@ -12,13 +12,12 @@ import org.academiadecodigo.advancedexploration.Obstacles.Snake;
 import org.academiadecodigo.advancedexploration.PointsInterest.Crypt;
 import org.academiadecodigo.advancedexploration.PointsInterest.PointsInterest;
 import org.academiadecodigo.advancedexploration.PointsInterest.Pyramid;
-import org.academiadecodigo.advancedexploration.graphics.Color;
-import org.academiadecodigo.advancedexploration.graphics.Rectangle;
-import org.academiadecodigo.advancedexploration.graphics.Text;
-import org.academiadecodigo.advancedexploration.keyboard.Keyboard;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardEvent;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardEventType;
-import org.academiadecodigo.advancedexploration.keyboard.KeyboardHandler;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 
 public class Game {
 
@@ -129,40 +128,30 @@ public class Game {
 
     public void printRocks() {
         for (Rock r : rocks) {
-            rect = new Rectangle(r.getPos().getX() + field.PADDING, r.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
-            rect.setColor(Color.MAGENTA);
-            rect.fill();
+            r.draw();
         }
     }
 
     public void printPIs(){
         for (Interactable pi : pointsInterest) {
-            Rectangle r = new Rectangle(pi.getPos().getX() + field.PADDING, pi.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
-            r.fill();
-            r.setColor(Color.ORANGE);
+            pi.draw();
         }
     }
 
     public void printObstacles(){
         for (Interactable obstacle : obstacles) {
-            Rectangle r = new Rectangle(obstacle.getPos().getX() + field.PADDING, obstacle.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
-            r.fill();
-            r.setColor(Color.BLACK);
+            obstacle.draw();
         }
     }
 
     public void printItems(){
         for (Interactable item : items) {
-            Rectangle r = new Rectangle(item.getPos().getX() + field.PADDING, item.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
-            r.fill();
-            r.setColor(Color.RED);
+            item.draw();
         }
     }
 
     public void printGrail(){
-        Rectangle r = new Rectangle(grail.getPos().getX() + field.PADDING, grail.getPos().getY() + field.PADDING, field.getCellSize(), field.getCellSize());
-        r.fill();
-        r.setColor(Color.LIGHT_GRAY);
+        grail.draw();
     }
 
     public void printEntities() {
@@ -242,6 +231,7 @@ public class Game {
         for (Interactable obs : obstacles){
             if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated()){
                 obs.interact(player);
+                obs.erase();
                 printScores();
                 player.setScoreNotUpdated(true);
                 return;
@@ -251,6 +241,7 @@ public class Game {
         for (Interactable item : items){
             if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
                 item.interact(player);
+                item.erase();
                 printScores();
                 player.setScoreNotUpdated(true);
                 return;
@@ -286,7 +277,7 @@ public class Game {
     }
 
     public void keyboardPresses(){
-        KeyboardHandler playerMoves = new PlayerMoves(getRocks(), getField(), getPlayer());
+        PlayerMoves playerMoves = new PlayerMoves(getRocks(), getField(), getPlayer());
         Keyboard k = new Keyboard(playerMoves);
 
         KeyboardEvent eventRight = new KeyboardEvent();

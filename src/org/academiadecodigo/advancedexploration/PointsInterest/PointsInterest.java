@@ -4,17 +4,23 @@ import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.FieldPosition;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public abstract class PointsInterest implements Interactable {
 
     protected int reward;
     protected int penalty;
     protected double risk;
-    private FieldPosition pos;
+    protected FieldPosition pos;
+    protected Rectangle rect;
+    protected int cellSize;
+    protected int PADDING;
 
     public PointsInterest (int col, int row, Field field){
 
         pos = new FieldPosition(col, row, field);
+        cellSize = field.getCellSize();
+        PADDING = field.PADDING;
     }
 
     @Override

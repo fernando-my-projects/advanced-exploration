@@ -1,13 +1,17 @@
 package org.academiadecodigo.advancedexploration;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 
 public interface Interactable {
 
+    FieldPosition getPos();
 
-    public void interact(Player player);
+    void picInit();
 
-    public FieldPosition getPos();
+    void draw();
 
+    void erase();
 
+    void interact(Player player);
 }
