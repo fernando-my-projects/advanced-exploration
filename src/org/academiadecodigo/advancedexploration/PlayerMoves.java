@@ -10,22 +10,19 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PlayerMoves implements KeyboardHandler {
 
-    private Picture nazi;
     private PossibleMoves possibleMoves;
     private Player player;
     private Rectangle rect;
     private Field field;
     private boolean scoreNotUpdated = false;
     private int energySpentMoving = -20;
+    private Picture picPlayer;
 
     public PlayerMoves(Rock[] rocks, Field field, Player player) {
-        //nazi = new Picture(0,0, "/Users/codecadet/IdeaProjects/advanced-exploration/images/nazi-hitler.PNG");
-        //nazi.draw();
         this.field = field;
-        rect = new Rectangle(player.getPos().getX() + field.PADDING, player.getPos().getY()
-                + field.PADDING, field.getCellSize(), field.getCellSize());
-        rect.setColor(Color.CYAN);
-        rect.fill();
+        picPlayer = new Picture(player.getPos().getX() + field.PADDING, player.getPos().getY()
+                + field.PADDING, "resources/images/indy.png");
+        picPlayer.draw();
         possibleMoves = new PossibleMoves(rocks, field);
         this.player = player;
     }
@@ -75,7 +72,6 @@ public class PlayerMoves implements KeyboardHandler {
                     }
                     break;
             }
-
         }
     }
 

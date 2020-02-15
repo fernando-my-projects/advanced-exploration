@@ -4,6 +4,7 @@ import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Whip extends Item {
 
@@ -20,17 +21,16 @@ public class Whip extends Item {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.BLACK);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/whip.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

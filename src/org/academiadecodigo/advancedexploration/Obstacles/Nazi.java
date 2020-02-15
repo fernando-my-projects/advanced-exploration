@@ -5,6 +5,7 @@ import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Nazi extends Obstacle {
@@ -26,17 +27,16 @@ public class Nazi extends Obstacle {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.DARK_GRAY);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/nazi-hitler.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

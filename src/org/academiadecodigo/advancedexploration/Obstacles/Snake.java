@@ -27,17 +27,16 @@ public class Snake extends Obstacle {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.RED);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/snake.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

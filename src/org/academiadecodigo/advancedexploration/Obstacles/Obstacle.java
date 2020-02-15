@@ -5,6 +5,7 @@ import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.FieldPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Obstacle implements Interactable {
 
@@ -14,6 +15,7 @@ public abstract class Obstacle implements Interactable {
     protected Rectangle rect;
     protected int cellSize;
     protected int PADDING;
+    protected Picture pic;
 
     public Obstacle(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
