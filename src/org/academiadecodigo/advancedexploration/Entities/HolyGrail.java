@@ -15,9 +15,9 @@ public class HolyGrail implements Interactable {
 
     public HolyGrail(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
-        picInit();
         cellSize = field.getCellSize();
         PADDING = field.PADDING;
+        picInit();
     }
 
     @Override
@@ -33,6 +33,7 @@ public class HolyGrail implements Interactable {
     public void picInit() {
         rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
         rect.setColor(Color.LIGHT_GRAY);
+        rect.draw();
     }
 
     @Override

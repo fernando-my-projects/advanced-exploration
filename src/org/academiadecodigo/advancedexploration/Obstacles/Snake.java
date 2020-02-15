@@ -19,6 +19,7 @@ public class Snake extends Obstacle {
 
     @Override
     public void getFightResult(Player player) {
+        erase();
         printRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
         player.setEnergy(-damage);
         player.setPoints(reward);
