@@ -3,6 +3,8 @@ package org.academiadecodigo.advancedexploration.Entities;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.FieldPosition;
+import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
+import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Player {
 
@@ -24,8 +26,10 @@ public class Player {
     }
 
     public void putOnHat(){
+        int reward = 50;
         hasHat = true;
-        points += 50;
+        points += reward;
+        PrintRunTimeInfo.print("You have picked up a Hat. You won " + reward + " points.");
     }
 
     public int getPoints(){
@@ -38,8 +42,10 @@ public class Player {
 
 
     public void pickWhip(){
+        int reward = 50;
         hasWhip = true;
-        points += 50;
+        points += reward;
+        PrintRunTimeInfo.print("You have picked up a Whip. You won " + reward + " points.");
     }
 
     public boolean hasHat() {
