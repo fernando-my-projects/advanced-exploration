@@ -23,7 +23,7 @@ public class Field {
         rect.fill();
          for(int i=0; i<width; i++){
              for(int j=0; j<height; j++){
-                 Picture sandPixelArt = new Picture(PADDING+i*cellSize,PADDING+j*cellSize,"resources/sand_pixelArt.png");
+                 Picture sandPixelArt = new Picture(PADDING+i*cellSize,PADDING+j*cellSize,"resources/images/sand_pixelArt.png");
                  sandPixelArt.draw();
              }
          }

@@ -36,7 +36,7 @@ public class PlayerMoves implements KeyboardHandler {
                 case KeyboardEvent.KEY_RIGHT:
                     if (possibleMoves.checkRight(player)) {
                         player.getPos().setCol(1);
-                        rect.translate(field.getCellSize(), 0);
+                        picPlayer.translate(field.getCellSize(), 0);
                         player.setScoreNotUpdated(false);
                         player.setEnergy(energySpentMoving);
                         player.setHasMoved(true);
@@ -46,7 +46,7 @@ public class PlayerMoves implements KeyboardHandler {
                 case KeyboardEvent.KEY_LEFT:
                     if (possibleMoves.checkLeft(player)) {
                         player.getPos().setCol(-1);
-                        rect.translate(-field.getCellSize(), 0);
+                        picPlayer.translate(-field.getCellSize(), 0);
                         player.setScoreNotUpdated(false);
                         player.setEnergy(energySpentMoving);
                         player.setHasMoved(true);
@@ -56,7 +56,7 @@ public class PlayerMoves implements KeyboardHandler {
                 case KeyboardEvent.KEY_DOWN:
                     if (possibleMoves.checkDown(player)) {
                         player.getPos().setRow(1);
-                        rect.translate(0, field.getCellSize());
+                        picPlayer.translate(0, field.getCellSize());
                         player.setScoreNotUpdated(false);
                         player.setEnergy(energySpentMoving);
                         player.setHasMoved(true);
@@ -65,7 +65,7 @@ public class PlayerMoves implements KeyboardHandler {
                 case KeyboardEvent.KEY_UP:
                     if (possibleMoves.checkUp(player)) {
                         player.getPos().setRow(-1);
-                        rect.translate(0, -field.getCellSize());
+                        picPlayer.translate(0, -field.getCellSize());
                         player.setScoreNotUpdated(false);
                         player.setEnergy(energySpentMoving);
                         player.setHasMoved(true);
