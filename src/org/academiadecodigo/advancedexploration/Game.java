@@ -261,8 +261,10 @@ public class Game {
         String scoreString = "The End. Your Score was: " + player.getPoints();
         String energyString = "Your Remaining Energy was: " + player.getEnergy();
 
-        if (player.getEnergy() < 0) {
-            energyString = "You Ran Out of Energy! (" + player.getEnergy() + ")";
+        if (player.getEnergy() <= 0) {
+            player.setToZero();
+            energyString = "You Ran Out of Energy: " + player.getEnergy();
+
         }
         if (player.getPoints() < 0) {
             scoreString = "You Ran Out of Points! (" + player.getPoints() + ")";

@@ -36,6 +36,7 @@ public class Player {
         return energy;
     }
 
+
     public void pickWhip(){
         hasWhip = true;
         points += 50;
@@ -47,6 +48,10 @@ public class Player {
 
     public boolean hasWhip() {
         return hasWhip;
+    }
+
+    public void setToZero(){
+        energy = 0;
     }
 
     public void setEnergy(int energy) {
