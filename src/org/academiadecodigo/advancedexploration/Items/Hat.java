@@ -4,6 +4,7 @@ import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Hat extends Item {
 
@@ -19,17 +20,16 @@ public class Hat extends Item {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.ORANGE);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/hat.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

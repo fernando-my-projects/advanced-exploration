@@ -5,6 +5,7 @@ import org.academiadecodigo.advancedexploration.FieldPosition;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class HolyGrail implements Interactable {
 
@@ -12,12 +13,11 @@ public class HolyGrail implements Interactable {
     protected int cellSize;
     protected int PADDING;
     protected Rectangle rect;
+    protected Picture pic;
 
     public HolyGrail(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
         picInit();
-        cellSize = field.getCellSize();
-        PADDING = field.PADDING;
     }
 
     @Override
@@ -31,17 +31,16 @@ public class HolyGrail implements Interactable {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.LIGHT_GRAY);
+        pic = new Picture(PADDING+pos.getX(), PADDING+pos.getY(), "resources/images/holyGrail.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

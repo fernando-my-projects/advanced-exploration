@@ -5,6 +5,7 @@ import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.printRunTimeInfo;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Pyramid extends PointsInterest {
 
@@ -29,17 +30,16 @@ public class Pyramid extends PointsInterest {
 
     @Override
     public void picInit() {
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.GREEN);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/pyramid.png");
     }
 
     @Override
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
     @Override
     public void erase() {
-        rect.delete();
+        pic.delete();
     }
 }

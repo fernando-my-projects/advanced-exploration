@@ -19,6 +19,13 @@ import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 
+import javax.sound.sampled.*;
+import java.awt.*;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class Game {
 
     private Field field;
@@ -34,6 +41,10 @@ public class Game {
     private Text score;
     private Text energy;
     private Text pickedUpItems;
+    private File audioFile;
+    private Clip audioClipIntro;
+    private File whipSoundFile;
+    private Clip audioFileWhip;
 
     public Game (int cols, int rows){
         field = new Field(cols, rows);
@@ -57,15 +68,16 @@ public class Game {
     }
 
     private void initializeTexts() {
-        score = new Text(435, 510, ""+player.getPoints());
+        score = new Text(435, 520, ""+player.getPoints());
         score.draw();
-        energy = new Text(435, 480, ""+player.getEnergy());
+        energy = new Text(435, 535, ""+player.getEnergy());
         energy.draw();
-        pickedUpItems = new Text(20, 520, "You haven't picked up anything yet.");
+        pickedUpItems = new Text(20, 527, "You haven't picked up anything yet.");
         pickedUpItems.draw();
     }
 
     public void start() {
+        playMusic();
         gameOver = false;
         welcomeScreen();
         init();
@@ -74,13 +86,16 @@ public class Game {
             printScores();
         }
         endGame();
+        audioClipIntro.close();
+        //audioStream.close()
+
     }
 
     private void welcomeScreen() {
         field.init();
         Text title = new Text (100, 150, "Welcome to the game stuff cenas game name here");
         Text welcome = new Text (70, 200, "TUTORIAL: Bla bla. Edit this. You lose points on X Y Z, you win on A B C");
-        Text timer = new Text(470, 520, "9");
+        Text timer = new Text(470, 533, "9");
         title.setColor(Color.BLUE);
         timer.setColor(new Color(24, 199, 62));
         title.draw();
@@ -89,7 +104,7 @@ public class Game {
         timer.grow(16, 23);
 
         //10 secs counter
-        for(int time = 9; time >= 0; time--) {
+        for(int time = 2; time >= 0; time--) {
             sleep(1000);
             timer.setText(""+time);
         }
@@ -240,6 +255,7 @@ public class Game {
 
         for (Interactable item : items){
             if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
+                playWhipMusic();
                 item.interact(player);
                 item.erase();
                 printScores();
@@ -304,5 +320,55 @@ public class Game {
     }
 
 
+    public void playMusic() {
+        /*Music*/
+        audioFile = new File("resources/gameSounds/theme.wav");
+        try {
+               AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
+               AudioFormat format = audioStream.getFormat();
+               DataLine.Info info = new DataLine.Info(Clip.class, format);
+
+               audioClipIntro = (Clip) AudioSystem.getLine(info);
+
+               audioClipIntro.open(audioStream);
+               audioClipIntro.start();
+
+
+
+            //audioClipIntro.close();
+            //audioStream.close();
+
+            //InputStream audioSrc = getClass().getResourceAsStream("resources/gameSounds/theme.wav");
+
+            //InputStream bufferedIn = new BufferedInputStream(audioSrc);
+
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+
+    public void playWhipMusic() {
+
+        whipSoundFile = new File("resources/gameSounds/whip.wav");
+
+        try {
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(whipSoundFile);
+            AudioFormat audioFormat = audioStream.getFormat();
+
+            DataLine.Info info = new DataLine.Info(Clip.class, audioFormat);
+            audioFileWhip = (Clip) AudioSystem.getLine(info);
+            audioFileWhip.open(audioStream);
+            audioFileWhip.start();
+            audioStream.close();
+
+
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+    }
 }
+
+

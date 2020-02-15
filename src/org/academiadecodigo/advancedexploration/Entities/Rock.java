@@ -2,16 +2,15 @@ package org.academiadecodigo.advancedexploration.Entities;
 
 import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.FieldPosition;
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 public class Rock {
 
     private FieldPosition pos;
-    private Rectangle rect;
     protected int cellSize;
     protected int PADDING;
+    protected Picture pic;
 
     public Rock(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
@@ -25,12 +24,11 @@ public class Rock {
     }
 
     public void rockInit(){
-        rect = new Rectangle(PADDING + pos.getX(), PADDING + pos.getY(), cellSize, cellSize);
-        rect.setColor(Color.MAGENTA);
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/rock2.png");
     }
 
     public void draw() {
-        rect.fill();
+        pic.draw();
     }
 
 

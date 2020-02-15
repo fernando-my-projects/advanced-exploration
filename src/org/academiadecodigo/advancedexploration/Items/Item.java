@@ -5,6 +5,7 @@ import org.academiadecodigo.advancedexploration.Field;
 import org.academiadecodigo.advancedexploration.Interactable;
 import org.academiadecodigo.advancedexploration.FieldPosition;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public abstract class Item implements Interactable {
 
@@ -12,6 +13,7 @@ public abstract class Item implements Interactable {
     protected int cellSize;
     protected int PADDING;
     protected Rectangle rect;
+    protected Picture pic;
 
     public Item(int col, int row, Field field) {
         pos = new FieldPosition(col, row, field);
