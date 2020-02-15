@@ -7,6 +7,7 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Whip extends Item {
+    private boolean isPicked = false;
 
     public Whip(int col, int row, Field field){
         super(col, row, field);
@@ -16,7 +17,11 @@ public class Whip extends Item {
     @Override
     public void equip(Player player) {
         erase();
-        player.pickWhip();
+        if (!isPicked) {
+            player.pickWhip();
+        }
+
+        isPicked = true;
     }
 
     @Override
