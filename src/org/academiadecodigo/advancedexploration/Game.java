@@ -35,6 +35,7 @@ public class Game {
     private Player player;
     private Interactable grail;
     private Interactable[] interactables;
+    private PossibleMoves possibleMoves;
     private Rectangle rect;
     private boolean gameOver;
     private boolean gameWon;
@@ -56,6 +57,7 @@ public class Game {
         field.init();
         makeRocks();
         makePlayer();
+        possibleMoves = new PossibleMoves(rocks, field, player);
         makeGrail();
         makeInteractables();
         printEntities();
@@ -81,13 +83,15 @@ public class Game {
         init();
 
         while (true) {
+            possibleMoves.drawAll();
             player.setHasMoved(false);
             interactionChecker();
             printScores();
             if (gameOver || player.getEnergy() <= 0){
                 break;
             }
-            sleep(500);
+            sleep(800);
+            possibleMoves.hideAll();
         }
         endGame();
         audioClipIntro.close();
@@ -319,7 +323,7 @@ public class Game {
     }
 
     public void keyboardPresses(){
-        PlayerMoves playerMoves = new PlayerMoves(getRocks(), getField(), getPlayer());
+        PlayerMoves playerMoves = new PlayerMoves(possibleMoves, getField(), getPlayer());
         Keyboard k = new Keyboard(playerMoves);
 
         KeyboardEvent eventRight = new KeyboardEvent();

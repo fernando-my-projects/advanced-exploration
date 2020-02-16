@@ -24,7 +24,6 @@ public class Whip extends Item {
 
     @Override
     public void equip(Player player) {
-        PrintRunTimeInfo.timerPrint("test");
         erase();
         playWhipMusic();
         player.pickWhip();
