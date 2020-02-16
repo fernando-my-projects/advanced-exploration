@@ -16,6 +16,7 @@ public class Player {
     private Field field;
     private boolean scoreNotUpdated = false;
     private boolean hasMoved;
+    private int equipReward = 50;
 
     public Player(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
@@ -27,10 +28,9 @@ public class Player {
     }
 
     public void putOnHat(){
-        int reward = 50;
         hasHat = true;
-        points += reward;
-        PrintRunTimeInfo.print("You have picked up a Hat. You won " + reward + " points.");
+        points += equipReward;
+        PrintRunTimeInfo.timerPrint(getMessage("You have picked up a Hat."));
     }
 
     public int getPoints(){
@@ -43,10 +43,9 @@ public class Player {
 
 
     public void pickWhip(){
-        int reward = 50;
         hasWhip = true;
-        points += reward;
-        PrintRunTimeInfo.print("You have picked up a Whip. You won " + reward + " points.");
+        points += equipReward;
+        PrintRunTimeInfo.timerPrint(getMessage("You have picked up a Whip."));
     }
 
     public boolean hasHat() {
@@ -91,5 +90,9 @@ public class Player {
 
     public boolean hasMoved(){
         return hasMoved;
+    }
+
+    public String getMessage(String string){
+        return string + " You won " + equipReward + " points.";
     }
 }
