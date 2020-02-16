@@ -310,6 +310,10 @@ public class Game {
         String victoryString = "";
         String loseString = "";
 
+        if(HighScore.load() < player.getPoints()) {
+            scoreString+= ". You also set a new Highscore!";
+        }
+
         if (player.getEnergy() <= 0) {
             player.setToZero();
             loseString = "You lost the game....";
