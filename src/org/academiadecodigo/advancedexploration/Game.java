@@ -101,6 +101,7 @@ public class Game {
             sleep(500);
             possibleMoves.hideAll();
         }
+        gameOver = true;
         endGame();
         audioClipIntro.close();
         //audioStream.close()
@@ -397,8 +398,8 @@ public class Game {
         k.addEventListener(eventDown);
 
         KeyboardEvent eventQuit = new KeyboardEvent();
-        eventDown.setKey(KeyboardEvent.KEY_Q);
-        eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        eventQuit.setKey(KeyboardEvent.KEY_Q);
+        eventQuit.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(eventQuit);
     }
 
