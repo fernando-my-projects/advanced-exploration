@@ -6,8 +6,9 @@ import org.academiadecodigo.advancedexploration.PrintRunTimeInfo;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import javax.sound.sampled.*;
+import java.io.BufferedInputStream;
 import java.io.File;
-
+import java.io.InputStream;
 
 
 public class Whip extends Item {
@@ -56,7 +57,10 @@ public class Whip extends Item {
 
         try {
 
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(whipSoundFile);
+            InputStream audiosrc = getClass().getResourceAsStream("/resources/gameSounds/whip.wav");
+            InputStream bufferedIn = new BufferedInputStream(audiosrc);
+
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn);
             AudioFormat audioFormat = audioStream.getFormat();
 
             DataLine.Info info = new DataLine.Info(Clip.class, audioFormat);

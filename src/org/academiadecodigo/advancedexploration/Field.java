@@ -12,6 +12,8 @@ public class Field {
     public static final int PADDING = 10;
     private Rectangle rect;
     private Picture frame;
+    private Picture pic;
+    private Picture logo;
 
     public Field (int cols, int rows){
         width = cols;
@@ -27,19 +29,28 @@ public class Field {
                  sandPixelArt.draw();
              }
          }
-        Picture pic = new Picture(PADDING,PADDING+height*cellSize-50, "resources/images/ScoreBoardUpBar.png");
+        pic = new Picture(PADDING,PADDING+height*cellSize-50, "resources/images/scoreBoardUpBar.png");
         pic.draw();
-        frame();
-        logo();
-    }
-
-    public void frame() {
         frame = new Picture(0, 0, "resources/images/frameFinal.png");
         frame.draw();
+        logo = new Picture(380,20, "resources/images/logo.png");
+        logo.draw();
+
+
+
+
+
+        /*frame();
+        logo();*/
     }
 
+    /*public void frame() {
+        frame = new Picture(0, 0, "resources/images/frameFinal.png");
+        frame.draw();
+    }*/
+
     public void logo() {
-        Picture logo = new Picture(380,20, "resources/images/logo.png");
+        logo = new Picture(380,20, "resources/images/logo.png");
         logo.draw();
     }
 
