@@ -14,6 +14,7 @@ public class HolyGrail implements Interactable {
     protected int PADDING;
     protected Rectangle rect;
     protected Picture pic;
+    protected boolean hasInteracted = false;
 
     public HolyGrail(int col, int row, Field field){
         pos = new FieldPosition(col, row, field);
@@ -29,6 +30,11 @@ public class HolyGrail implements Interactable {
 
     public FieldPosition getPos() {
         return pos;
+    }
+
+    @Override
+    public boolean hasInteracted() {
+        return hasInteracted;
     }
 
     @Override
