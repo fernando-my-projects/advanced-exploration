@@ -24,7 +24,7 @@ public class Rock {
     }
 
     public void rockInit(){
-        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/rock2.png");
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/rock3D.png");
     }
 
     public void draw() {

@@ -1,5 +1,6 @@
 package org.academiadecodigo.advancedexploration;
 
+import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 
 import java.util.Timer;
@@ -7,7 +8,8 @@ import java.util.TimerTask;
 
 public class PrintRunTimeInfo {
     public static void print(String s) {
-        Text print = new Text(20, 527, s);
+        Text print = new Text(40, 525, s);
+        print.setColor(Color.WHITE);
         print.draw();
         try {
             Thread.sleep(2000);
