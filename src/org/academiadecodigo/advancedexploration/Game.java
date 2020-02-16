@@ -43,8 +43,10 @@ public class Game {
     private Text victory;
     private Text lose;
     private Text pickedUpItems;
+    private Text highScore;
     private File audioFile;
     private Clip audioClipIntro;
+    private int highScoreValue;
 
     public Game (int cols, int rows){
         field = new Field(cols, rows);
@@ -74,6 +76,9 @@ public class Game {
         pickedUpItems = new Text(40, 525, "You haven't picked up anything yet.");
         pickedUpItems.setColor(Color.WHITE);
         pickedUpItems.draw();
+        highScore = new Text(400, 70, "Highscore: "+HighScore.load());
+        highScore.setColor(Color.BLACK);
+        highScore.draw();
     }
 
     public void start() {
@@ -306,6 +311,10 @@ public class Game {
         String victoryString = "";
         String loseString = "";
 
+        if(HighScore.load() < player.getPoints()) {
+            scoreString+= ". You also set a new Highscore!";
+        }
+
         if (player.getEnergy() <= 0) {
             player.setToZero();
             loseString = "You lost the game....";
@@ -352,10 +361,7 @@ public class Game {
         energy.grow(70,25);
         energy.draw();
 
-
-
-
-
+        HighScore.save(player.getPoints());
     }
 
     public void keyboardPresses(){
