@@ -23,7 +23,7 @@ public class Snake extends Obstacle {
     public void getFightResult(Player player) {
 
         erase();
-        PrintRunTimeInfo.print("You fought a snake. -" + damage + " Energy, +" + reward + " points!");
+        PrintRunTimeInfo.timerPrint(getMessage());
         player.setEnergy(-damage);
         player.setPoints(reward);
         hasInteracted = true;
@@ -47,5 +47,9 @@ public class Snake extends Obstacle {
     @Override
     public void erase() {
         pic.delete();
+    }
+
+    public String getMessage(){
+        return "You fought a snake. -" + damage + " Energy, +" + reward + " points!";
     }
 }

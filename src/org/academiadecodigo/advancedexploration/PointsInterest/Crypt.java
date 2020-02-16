@@ -25,13 +25,13 @@ public class Crypt extends PointsInterest {
 
        if (Math.random() < risk){
            player.setEnergy(-penalty);
-           PrintRunTimeInfo.print("You entered in a crypt. You lost -" + penalty + " Energy...");
+           PrintRunTimeInfo.timerPrint(getMessage(" You lost -" + penalty + " Energy..."));
            hasInteracted = true;
            return;
        }
 
        player.setPoints(reward);
-       PrintRunTimeInfo.print("You entered in a crypt. You won +" + reward + " points!");
+       PrintRunTimeInfo.timerPrint(getMessage(" You won +" + reward + " points!"));
         hasInteracted = true;
     }
 
@@ -53,5 +53,12 @@ public class Crypt extends PointsInterest {
     @Override
     public void erase() {
         pic.delete();
+    }
+
+    public String getMessage(String string){
+
+        String message = "You entered in a crypt.";
+
+        return message + string;
     }
 }

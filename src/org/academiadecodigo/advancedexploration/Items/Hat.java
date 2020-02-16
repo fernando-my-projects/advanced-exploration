@@ -2,12 +2,11 @@ package org.academiadecodigo.advancedexploration.Items;
 
 import org.academiadecodigo.advancedexploration.Entities.Player;
 import org.academiadecodigo.advancedexploration.Field;
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Hat extends Item {
     protected boolean hasInteracted = false;
+    protected int reward = 50;
 
     public Hat(int col, int row, Field field){
         super(col, row, field);
@@ -39,5 +38,9 @@ public class Hat extends Item {
     @Override
     public void erase() {
         pic.delete();
+    }
+
+    public int getReward() {
+        return reward;
     }
 }

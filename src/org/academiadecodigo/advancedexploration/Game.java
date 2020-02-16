@@ -34,9 +34,6 @@ public class Game {
     private Rock[] rocks;
     private Player player;
     private Interactable grail;
-    private Interactable[] pointsInterest;
-    private Interactable[] obstacles;
-    private Interactable[] items;
     private Interactable[] interactables;
     private Rectangle rect;
     private boolean gameOver;
@@ -48,16 +45,11 @@ public class Game {
     private Text pickedUpItems;
     private File audioFile;
     private Clip audioClipIntro;
-    private File whipSoundFile;
-    private Clip audioFileWhip;
 
     public Game (int cols, int rows){
         field = new Field(cols, rows);
         rocks = new Rock[16];
         interactables = new Interactable[6];
-        pointsInterest = new PointsInterest[2];
-        obstacles = new Obstacle[2];
-        items = new Item[2];
     }
 
     public void init(){
@@ -208,24 +200,6 @@ public class Game {
             inter.draw();
         }
     }
-/*
-    public void printPIs(){
-        for (Interactable pi : pointsInterest) {
-            pi.draw();
-        }
-    }
-
-    public void printObstacles(){
-        for (Interactable obstacle : obstacles) {
-            obstacle.draw();
-        }
-    }
-
-    public void printItems(){
-        for (Interactable item : items) {
-            item.draw();
-        }
-    }*/
 
     public void printGrail(){
         grail.draw();
@@ -285,21 +259,6 @@ public class Game {
     public void makeGrail(){
         grail = new HolyGrail(2,0, field);
     }
-/*
-    public void makePIs(){
-        pointsInterest[0] = new Crypt(6,3, field);
-        pointsInterest[1] = new Pyramid(1, 6, field);
-    }
-
-    public void makeObstacles(){
-        obstacles[0] = new Nazi(5,2, field);
-        obstacles[1] = new Snake(2, 7, field);
-    }
-
-    public void makeItems(){
-        items[0] = new Whip(7, 5, field);
-        items[1] = new Hat(2, 3, field);
-    }*/
 
     public void interactionChecker(){
 
@@ -313,45 +272,12 @@ public class Game {
             }
         }
 
-
-/*
-        for (Interactable pi : pointsInterest) {
-            if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated() && !pi.hasInteracted()){
-                pickedUpItems.delete();
-                pi.interact(player);
-                player.setScoreNotUpdated(true);
-                return;
-            }
-        }
-
-        for (Interactable obs : obstacles){
-            if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated() && !obs.hasInteracted()){
-                pickedUpItems.delete();
-                obs.interact(player);
-                player.setScoreNotUpdated(true);
-
-                return;
-            }
-        }
-
-        for (Interactable item : items){
-            if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated() && !item.hasInteracted()){
-
-                playWhipMusic();
-                pickedUpItems.delete();
-                item.interact(player);
-                player.setScoreNotUpdated(true);
-                return;
-            }
-        }*/
-
         if (player.getPos().equals(grail.getPos()) && !player.getScoreNotUpdated()){
             pickedUpItems.delete();
             grail.interact(player);
             gameOver = true;
             gameWon = true;
             printScores();
-            return;
         }
     }
 
@@ -447,26 +373,7 @@ public class Game {
     }
 
 
-    public void playWhipMusic() {
 
-        whipSoundFile = new File("resources/gameSounds/whip.wav");
-
-        try {
-            AudioInputStream audioStream = AudioSystem.getAudioInputStream(whipSoundFile);
-            AudioFormat audioFormat = audioStream.getFormat();
-
-            DataLine.Info info = new DataLine.Info(Clip.class, audioFormat);
-            audioFileWhip = (Clip) AudioSystem.getLine(info);
-            audioFileWhip.open(audioStream);
-            audioFileWhip.start();
-            audioStream.close();
-
-
-        } catch (Exception e) {
-            e.getMessage();
-        }
-
-    }
 }
 
 
