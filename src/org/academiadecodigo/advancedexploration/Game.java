@@ -73,11 +73,14 @@ public class Game {
 
     private void initializeTexts() {
 
-        score = new Text(400, 520, ""+player.getPoints());
+        score = new Text(400, 517, ""+player.getPoints());
+        score.setColor(Color.WHITE);
         score.draw();
-        energy = new Text(400, 535, ""+player.getEnergy());
+        energy = new Text(400, 530, ""+player.getEnergy());
+        energy.setColor(Color.WHITE);
         energy.draw();
-        pickedUpItems = new Text(20, 527, "You haven't picked up anything yet.");
+        pickedUpItems = new Text(40, 525, "You haven't picked up anything yet.");
+        pickedUpItems.setColor(Color.WHITE);
         pickedUpItems.draw();
     }
 
@@ -105,15 +108,27 @@ public class Game {
 
     private void welcomeScreen() {
         field.init();
-        Text title = new Text (80, 50, "Welcome to The Game Cenas");
+        //___________________________________________
+        Picture intro = new Picture(0,0, "resources/images/introImage2.png");
+        intro.draw();
+        Text timer2 = new Text(470, 533, "4");
+        for(int time = 4; time >= 0; time--) {
+            sleep(1000);
+            timer2.setText(""+time);
+        }
+        intro.delete();
+        timer2.delete();
+        //____________________________________________
+        /*Text title = new Text (80, 50, "Indiana Jones and the Last Cruzade");*/
         Text welcome = new Text (80, 70, "TUTORIAL:");
-        Text timer = new Text(470, 533, "9");
-        title.setColor(Color.BLUE);
-        timer.setColor(new Color(24, 199, 62));
-        title.draw();
+        Text timer = new Text(470, 525, "9");
+        /*title.setColor(Color.BLUE);*/
+        timer.setColor(Color.WHITE);
+        /*title.draw();*/
         welcome.draw();
         timer.draw();
-        timer.grow(16, 23);
+        timer.grow(12, 17);
+        field.logo();
 
         Picture snake = new Picture (80, 90, "resources/images/snake.png");
         snake.draw();
@@ -151,7 +166,7 @@ public class Game {
             timer.setText(""+time);
         }
 
-        title.delete();
+        //title.delete();
         welcome.delete();
         timer.delete();
         snake.delete();
@@ -357,6 +372,8 @@ public class Game {
 
     public void endGame(){
         field.setClear();
+        field.finalImage();
+        field.logo();
         String scoreString = "Your Score was: " + player.getPoints();
         String energyString = "Your Remaining Energy was: " + player.getEnergy();
         String victoryString = "";
@@ -376,18 +393,40 @@ public class Game {
         }
 
 
-        lose = new Text(150, 200, loseString);
-        lose.setColor(Color.BLACK);
+        /*lose = new Text(150, 200, loseString);
+        lose.setColor(Color.WHITE);
+        lose.grow(70,25);
         lose.draw();
-        victory = new Text(150, 200, victoryString);
-        victory.setColor(Color.BLACK);
+        victory = new Text(150, 150, victoryString);
+        victory.setColor(Color.WHITE);
+        victory.grow(70,25);
         victory.draw();
-        energy = new Text(150, 300, energyString);
-        energy.setColor(Color.BLACK);
-        energy.draw();
-        score = new Text(150, 250, scoreString);
-        score.setColor(Color.BLACK);
+        energy = new Text(150, 250, energyString);
+        energy.setColor(Color.WHITE);
+        energy.grow(70,25);
+        energy.draw();*/
+        score = new Text(150, 150, scoreString);
+        score.setColor(Color.WHITE);
+        score.grow(70,25);
         score.draw();
+
+        lose = new Text(150, 250, loseString);
+        lose.setColor(Color.WHITE);
+        lose.grow(70,25);
+        lose.draw();
+
+        victory = new Text(150, 250, victoryString);
+        victory.setColor(Color.WHITE);
+        victory.grow(70,25);
+        victory.draw();
+
+        energy = new Text(150, 350, energyString);
+        energy.setColor(Color.WHITE);
+        energy.grow(70,25);
+        energy.draw();
+
+
+
 
 
     }
