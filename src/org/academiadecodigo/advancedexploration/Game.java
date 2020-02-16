@@ -18,6 +18,7 @@ import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 import javax.sound.sampled.*;
 import java.awt.*;
@@ -104,8 +105,8 @@ public class Game {
 
     private void welcomeScreen() {
         field.init();
-        Text title = new Text (100, 150, "Welcome to the game stuff cenas game name here");
-        Text welcome = new Text (70, 200, "TUTORIAL: Bla bla. Edit this. You lose points on X Y Z, you win on A B C");
+        Text title = new Text (80, 50, "Welcome to The Game Cenas");
+        Text welcome = new Text (80, 70, "TUTORIAL:");
         Text timer = new Text(470, 533, "9");
         title.setColor(Color.BLUE);
         timer.setColor(new Color(24, 199, 62));
@@ -114,8 +115,38 @@ public class Game {
         timer.draw();
         timer.grow(16, 23);
 
+        Picture snake = new Picture (80, 90, "resources/images/snake.png");
+        snake.draw();
+        Picture pyramid = new Picture (80, 150, "resources/images/pyramid.png");
+        pyramid.draw();
+        Picture crypt = new Picture(80, 210, "resources/images/crypt.png");
+        crypt.draw();
+        Picture nazi = new Picture(80, 270, "resources/images/nazi-hitler.PNG");
+        nazi.draw();
+        Picture hat = new Picture(80, 330, "resources/images/hat.PNG");
+        hat.draw();
+        Picture whip = new Picture(80, 390, "resources/images/whip.PNG");
+        whip.draw();
+        Picture holyGrail = new Picture(80, 450, "resources/images/holyGrail.PNG");
+        holyGrail.draw();
+
+        Text snakeT = new Text(140, 110, "Snake: +40 Points / -20 Energy");
+        snakeT.draw();
+        Text pyramidT = new Text(140, 170, "Pyramid: +50 Points / 50% chance of -25 Energy");
+        pyramidT.draw();
+        Text cryptT = new Text(140, 230, "Crypt: +100 Points / 70% chance of -50 Energy");
+        cryptT.draw();
+        Text naziT = new Text(140, 290, "Nazi: +80 Points / -40 Energy");
+        naziT.draw();
+        Text hatT = new Text(140, 350, "Hat (Wearable Item)");
+        hatT.draw();
+        Text whipT = new Text(140, 410, "Whip (Wearable Item)");
+        whipT.draw();
+        Text holyGrailT = new Text(140, 470, "Holy Grail: +200 Points. Ending Point.");
+        holyGrailT.draw();
+
         //10 secs counter
-        for(int time = 2; time >= 0; time--) {
+        for(int time = 9; time >= 0; time--) {
             sleep(1000);
             timer.setText(""+time);
         }
@@ -123,6 +154,20 @@ public class Game {
         title.delete();
         welcome.delete();
         timer.delete();
+        snake.delete();
+        pyramid.delete();
+        crypt.delete();
+        nazi.delete();
+        hat.delete();
+        whip.delete();
+        holyGrail.delete();
+        snakeT.delete();
+        pyramidT.delete();
+        cryptT.delete();
+        naziT.delete();
+        hatT.delete();
+        whipT.delete();
+        holyGrailT.delete();
     }
 
     public void sleep(int time) {
