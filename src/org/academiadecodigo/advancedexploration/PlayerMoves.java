@@ -17,14 +17,16 @@ public class PlayerMoves implements KeyboardHandler {
     private boolean scoreNotUpdated = false;
     private int energySpentMoving = -20;
     private Picture picPlayer;
+    private Game game;
 
-    public PlayerMoves(Rock[] rocks, Field field, Player player) {
-        this.field = field;
+    public PlayerMoves(PossibleMoves possibleMoves, Game game) {
+        this.field = game.getField();
+        this.possibleMoves = possibleMoves;
+        this.player = game.getPlayer();
+        this.game = game;
         picPlayer = new Picture(player.getPos().getX() + field.PADDING, player.getPos().getY()
                 + field.PADDING, "resources/images/indy.png");
         picPlayer.draw();
-        possibleMoves = new PossibleMoves(rocks, field);
-        this.player = player;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class PlayerMoves implements KeyboardHandler {
 
             switch (e.getKey()) {
                 case KeyboardEvent.KEY_RIGHT:
-                    if (possibleMoves.checkRight(player)) {
+                    if (possibleMoves.checkRight()) {
                         player.getPos().setCol(1);
                         picPlayer.translate(field.getCellSize(), 0);
                         player.setScoreNotUpdated(false);
@@ -44,7 +46,7 @@ public class PlayerMoves implements KeyboardHandler {
 
                     break;
                 case KeyboardEvent.KEY_LEFT:
-                    if (possibleMoves.checkLeft(player)) {
+                    if (possibleMoves.checkLeft()) {
                         player.getPos().setCol(-1);
                         picPlayer.translate(-field.getCellSize(), 0);
                         player.setScoreNotUpdated(false);
@@ -54,7 +56,7 @@ public class PlayerMoves implements KeyboardHandler {
 
                     break;
                 case KeyboardEvent.KEY_DOWN:
-                    if (possibleMoves.checkDown(player)) {
+                    if (possibleMoves.checkDown()) {
                         player.getPos().setRow(1);
                         picPlayer.translate(0, field.getCellSize());
                         player.setScoreNotUpdated(false);
@@ -63,7 +65,7 @@ public class PlayerMoves implements KeyboardHandler {
                     }
                     break;
                 case KeyboardEvent.KEY_UP:
-                    if (possibleMoves.checkUp(player)) {
+                    if (possibleMoves.checkUp()) {
                         player.getPos().setRow(-1);
                         picPlayer.translate(0, -field.getCellSize());
                         player.setScoreNotUpdated(false);
@@ -71,6 +73,13 @@ public class PlayerMoves implements KeyboardHandler {
                         player.setHasMoved(true);
                     }
                     break;
+
+                case KeyboardEvent.KEY_Q:
+                    if (game.getGameOver()){
+                        System.exit(0);
+                    }
+                    break;
+
             }
         }
     }
@@ -82,11 +91,4 @@ public class PlayerMoves implements KeyboardHandler {
          */
     }
 
-    public void sleep(int time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
 }

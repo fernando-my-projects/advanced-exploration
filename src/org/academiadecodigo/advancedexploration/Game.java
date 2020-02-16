@@ -36,6 +36,7 @@ public class Game {
     private Interactable grail;
     private Interactable[] interactables;
     private Rectangle rect;
+    private PossibleMoves possibleMoves;
     private boolean gameOver;
     private boolean gameWon;
     private Text score;
@@ -60,6 +61,7 @@ public class Game {
         makePlayer();
         makeGrail();
         makeInteractables();
+        possibleMoves = new PossibleMoves(rocks, field, player);
         printEntities();
         keyboardPresses();
         initializeTexts();
@@ -90,12 +92,14 @@ public class Game {
 
         while (true) {
             player.setHasMoved(false);
+            possibleMoves.drawAll();
             interactionChecker();
             printScores();
             if (gameOver || player.getEnergy() <= 0){
                 break;
             }
             sleep(500);
+            possibleMoves.hideAll();
         }
         endGame();
         audioClipIntro.close();
@@ -252,11 +256,11 @@ public class Game {
     }
 
     public void makeInteractables(){
-        interactables[0] = new Crypt(6,3, field);
-        interactables[1] = new Pyramid(1, 6, field);
+        interactables[0] = new Crypt(7,3, field);
+        interactables[1] = new Pyramid(1, 5, field);
         interactables[2] = new Nazi(5,2, field);
         interactables[3] = new Snake(2, 7, field);
-        interactables[4] = new Whip(7, 5, field);
+        interactables[4] = new Whip(7, 6, field);
         interactables[5] = new Hat(2, 3, field);
     }
 
@@ -270,6 +274,10 @@ public class Game {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public boolean getGameOver(){
+        return gameOver;
     }
 
     public void makePlayer(){
@@ -365,7 +373,7 @@ public class Game {
     }
 
     public void keyboardPresses(){
-        PlayerMoves playerMoves = new PlayerMoves(getRocks(), getField(), getPlayer());
+        PlayerMoves playerMoves = new PlayerMoves(possibleMoves, this);
         Keyboard k = new Keyboard(playerMoves);
 
         KeyboardEvent eventRight = new KeyboardEvent();
@@ -387,6 +395,11 @@ public class Game {
         eventDown.setKey(KeyboardEvent.KEY_DOWN);
         eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(eventDown);
+
+        KeyboardEvent eventQuit = new KeyboardEvent();
+        eventDown.setKey(KeyboardEvent.KEY_Q);
+        eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventQuit);
     }
 
 
@@ -422,6 +435,7 @@ public class Game {
             System.err.println(e.getMessage());
         }
     }
+
 
 
 
