@@ -14,4 +14,7 @@ public interface Interactable {
     void erase();
 
     void interact(Player player);
+
+    boolean hasInteracted();
+
 }

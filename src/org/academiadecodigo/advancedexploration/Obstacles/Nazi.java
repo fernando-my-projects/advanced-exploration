@@ -10,6 +10,8 @@ import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Nazi extends Obstacle {
 
+    protected boolean hasInteracted = false;
+
     public Nazi(int col, int row, Field field){
         super(col, row, field);
         picInit();
@@ -23,6 +25,12 @@ public class Nazi extends Obstacle {
         erase();
         player.setPoints(reward);
         player.setEnergy(-damage);
+        hasInteracted = true;
+    }
+
+    @Override
+    public boolean hasInteracted() {
+        return hasInteracted;
     }
 
     @Override

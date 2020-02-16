@@ -10,6 +10,8 @@ import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Pyramid extends PointsInterest {
 
+    protected boolean hasInteracted = false;
+
     public Pyramid(int col, int row, Field field){
         super(col, row, field);
         picInit();
@@ -24,13 +26,20 @@ public class Pyramid extends PointsInterest {
         if (Math.random() < risk){
             player.setEnergy(-penalty);
             PrintRunTimeInfo.print("You entered in a Pyramid. You lost -" + penalty + " Energy...");
+            hasInteracted = true;
             return;
         }
 
         player.setPoints(reward);
         PrintRunTimeInfo.print("You entered in a Pyramid. You won +" + reward + " points.");
+        hasInteracted = true;
 
 
+    }
+
+    @Override
+    public boolean hasInteracted() {
+        return hasInteracted;
     }
 
     @Override

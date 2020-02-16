@@ -36,6 +36,7 @@ public class Game {
     private Interactable[] pointsInterest;
     private Interactable[] obstacles;
     private Interactable[] items;
+    private Interactable[] interactables;
     private Rectangle rect;
     private boolean gameOver;
     private boolean gameWon;
@@ -52,6 +53,7 @@ public class Game {
     public Game (int cols, int rows){
         field = new Field(cols, rows);
         rocks = new Rock[16];
+        interactables = new Interactable[6];
         pointsInterest = new PointsInterest[2];
         obstacles = new Obstacle[2];
         items = new Item[2];
@@ -62,9 +64,7 @@ public class Game {
         makeRocks();
         makePlayer();
         makeGrail();
-        makeItems();
-        makeObstacles();
-        makePIs();
+        makeInteractables();
         printEntities();
         keyboardPresses();
         initializeTexts();
@@ -158,6 +158,12 @@ public class Game {
         }
     }
 
+    public void printInteractables(){
+        for (Interactable inter : interactables){
+            inter.draw();
+        }
+    }
+/*
     public void printPIs(){
         for (Interactable pi : pointsInterest) {
             pi.draw();
@@ -174,7 +180,7 @@ public class Game {
         for (Interactable item : items) {
             item.draw();
         }
-    }
+    }*/
 
     public void printGrail(){
         grail.draw();
@@ -182,9 +188,7 @@ public class Game {
 
     public void printEntities() {
         printRocks();
-        printPIs();
-        printObstacles();
-        printItems();
+        printInteractables();
         printGrail();
     }
 
@@ -208,6 +212,15 @@ public class Game {
         rocks[15] = new Rock (5, 8,field);
     }
 
+    public void makeInteractables(){
+        interactables[0] = new Crypt(6,3, field);
+        interactables[1] = new Pyramid(1, 6, field);
+        interactables[2] = new Nazi(5,2, field);
+        interactables[3] = new Snake(2, 7, field);
+        interactables[4] = new Whip(7, 5, field);
+        interactables[5] = new Hat(2, 3, field);
+    }
+
     public Rock[] getRocks() {
         return rocks;
     }
@@ -227,7 +240,7 @@ public class Game {
     public void makeGrail(){
         grail = new HolyGrail(2,0, field);
     }
-
+/*
     public void makePIs(){
         pointsInterest[0] = new Crypt(6,3, field);
         pointsInterest[1] = new Pyramid(1, 6, field);
@@ -241,12 +254,24 @@ public class Game {
     public void makeItems(){
         items[0] = new Whip(7, 5, field);
         items[1] = new Hat(2, 3, field);
-    }
+    }*/
 
     public void interactionChecker(){
 
+        for (Interactable inter : interactables){
+
+            if (player.getPos().equals(inter.getPos()) && !player.getScoreNotUpdated() && !inter.hasInteracted()){
+                pickedUpItems.delete();
+                inter.interact(player);
+                player.setScoreNotUpdated(true);
+                return;
+            }
+        }
+
+
+/*
         for (Interactable pi : pointsInterest) {
-            if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated()){
+            if (player.getPos().equals(pi.getPos()) && !player.getScoreNotUpdated() && !pi.hasInteracted()){
                 pickedUpItems.delete();
                 pi.interact(player);
                 player.setScoreNotUpdated(true);
@@ -255,7 +280,7 @@ public class Game {
         }
 
         for (Interactable obs : obstacles){
-            if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated()){
+            if (player.getPos().equals(obs.getPos()) && !player.getScoreNotUpdated() && !obs.hasInteracted()){
                 pickedUpItems.delete();
                 obs.interact(player);
                 player.setScoreNotUpdated(true);
@@ -265,7 +290,7 @@ public class Game {
         }
 
         for (Interactable item : items){
-            if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated()){
+            if (player.getPos().equals(item.getPos()) && !player.getScoreNotUpdated() && !item.hasInteracted()){
 
                 playWhipMusic();
                 pickedUpItems.delete();
@@ -273,7 +298,7 @@ public class Game {
                 player.setScoreNotUpdated(true);
                 return;
             }
-        }
+        }*/
 
         if (player.getPos().equals(grail.getPos()) && !player.getScoreNotUpdated()){
             pickedUpItems.delete();

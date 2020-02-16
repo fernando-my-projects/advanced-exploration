@@ -10,6 +10,8 @@ import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Crypt extends PointsInterest {
 
+    protected boolean hasInteracted = false;
+
     public Crypt(int col, int row, Field field){
         super(col, row, field);
         picInit();
@@ -24,11 +26,18 @@ public class Crypt extends PointsInterest {
        if (Math.random() < risk){
            player.setEnergy(-penalty);
            PrintRunTimeInfo.print("You entered in a crypt. You lost -" + penalty + " Energy...");
+           hasInteracted = true;
            return;
        }
 
        player.setPoints(reward);
        PrintRunTimeInfo.print("You entered in a crypt. You won +" + reward + " points!");
+        hasInteracted = true;
+    }
+
+    @Override
+    public boolean hasInteracted() {
+        return hasInteracted;
     }
 
     @Override
