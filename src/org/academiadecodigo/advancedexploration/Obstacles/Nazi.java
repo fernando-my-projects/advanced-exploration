@@ -35,7 +35,7 @@ public class Nazi extends Obstacle {
 
     @Override
     public void picInit() {
-        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/nazi-hitler.png");
+        pic = new Picture(PADDING + pos.getX(), PADDING + pos.getY(), "resources/images/nazi-hitler.PNG");
     }
 
     @Override

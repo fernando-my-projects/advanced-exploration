@@ -118,13 +118,13 @@ public class Game {
         //____________________________________________
         /*Text title = new Text (80, 50, "Indiana Jones and the Last Cruzade");*/
         Text welcome = new Text (80, 70, "TUTORIAL:");
-        Text timer = new Text(470, 525, "9");
+        Text timer = new Text(470, 533, "9");
         /*title.setColor(Color.BLUE);*/
         timer.setColor(Color.WHITE);
         /*title.draw();*/
         welcome.draw();
         timer.draw();
-        timer.grow(12, 17);
+        timer.grow(10, 15);
         field.logo();
 
         Picture snake = new Picture (80, 90, "resources/images/snake.png");
@@ -135,11 +135,11 @@ public class Game {
         crypt.draw();
         Picture nazi = new Picture(80, 270, "resources/images/nazi-hitler.PNG");
         nazi.draw();
-        Picture hat = new Picture(80, 330, "resources/images/hat.PNG");
+        Picture hat = new Picture(80, 330, "resources/images/hat.png");
         hat.draw();
-        Picture whip = new Picture(80, 390, "resources/images/whip.PNG");
+        Picture whip = new Picture(80, 390, "resources/images/whip.png");
         whip.draw();
-        Picture holyGrail = new Picture(80, 450, "resources/images/holyGrail.PNG");
+        Picture holyGrail = new Picture(80, 450, "resources/images/holyGrail.png");
         holyGrail.draw();
 
         Text snakeT = new Text(140, 110, "Snake: +40 Points / -20 Energy");
@@ -302,6 +302,7 @@ public class Game {
     }
 
     public void endGame(){
+        audioClipIntro.close();
         field.setClear();
         field.finalImage();
         field.logo();
@@ -391,17 +392,22 @@ public class Game {
 
     public void playMusic() {
         /*Music*/
-        audioFile = new File("resources/gameSounds/theme.wav");
+       //audioFile = new File("resources/gameSounds/theme.wav");
+
         try {
-               AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
 
-               AudioFormat format = audioStream.getFormat();
-               DataLine.Info info = new DataLine.Info(Clip.class, format);
+            InputStream audiosrc = getClass().getResourceAsStream("/resources/gameSounds/theme.wav");
+            InputStream bufferedIn = new BufferedInputStream(audiosrc);
 
-               audioClipIntro = (Clip) AudioSystem.getLine(info);
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(bufferedIn);
 
-               audioClipIntro.open(audioStream);
-               audioClipIntro.start();
+            AudioFormat format = audioStream.getFormat();
+            DataLine.Info info = new DataLine.Info(Clip.class, format);
+
+            audioClipIntro = (Clip) AudioSystem.getLine(info);
+
+            audioClipIntro.open(audioStream);
+            audioClipIntro.start();
 
 
 

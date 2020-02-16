@@ -7,7 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class PrintRunTimeInfo {
-    public static void print(String s) {
+    /*public static void print(String s) {
         Text print = new Text(40, 525, s);
         print.setColor(Color.WHITE);
         print.draw();
@@ -17,11 +17,12 @@ public class PrintRunTimeInfo {
             e.printStackTrace();
         }
         print.delete();
-    }
+    }*/
 
     public static void timerPrint(String message){
 
-        final Text print = new Text(20, 527, message);
+        final Text print = new Text(40, 525, message);
+        print.setColor(Color.WHITE);
         print.draw();
 
         TimerTask timerTask = new TimerTask() {
