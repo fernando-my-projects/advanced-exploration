@@ -17,14 +17,16 @@ public class PlayerMoves implements KeyboardHandler {
     private boolean scoreNotUpdated = false;
     private int energySpentMoving = -20;
     private Picture picPlayer;
+    private Game game;
 
-    public PlayerMoves(Field field, Player player, PossibleMoves possibleMoves) {
-        this.field = field;
+    public PlayerMoves(PossibleMoves possibleMoves, Game game) {
+        this.field = game.getField();
+        this.possibleMoves = possibleMoves;
+        this.player = game.getPlayer();
+        this.game = game;
         picPlayer = new Picture(player.getPos().getX() + field.PADDING, player.getPos().getY()
                 + field.PADDING, "resources/images/indy.png");
         picPlayer.draw();
-        this.possibleMoves = possibleMoves;
-        this.player = player;
     }
 
     @Override
@@ -71,6 +73,13 @@ public class PlayerMoves implements KeyboardHandler {
                         player.setHasMoved(true);
                     }
                     break;
+
+                case KeyboardEvent.KEY_Q:
+                    if (game.getGameOver()){
+                        System.exit(0);
+                    }
+                    break;
+
             }
         }
     }

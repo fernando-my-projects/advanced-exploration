@@ -276,6 +276,10 @@ public class Game {
         return player;
     }
 
+    public boolean getGameOver(){
+        return gameOver;
+    }
+
     public void makePlayer(){
         player = new Player(4,9, field);
     }
@@ -369,7 +373,7 @@ public class Game {
     }
 
     public void keyboardPresses(){
-        PlayerMoves playerMoves = new PlayerMoves(getField(), getPlayer(), possibleMoves);
+        PlayerMoves playerMoves = new PlayerMoves(possibleMoves, this);
         Keyboard k = new Keyboard(playerMoves);
 
         KeyboardEvent eventRight = new KeyboardEvent();
@@ -391,6 +395,11 @@ public class Game {
         eventDown.setKey(KeyboardEvent.KEY_DOWN);
         eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(eventDown);
+
+        KeyboardEvent eventQuit = new KeyboardEvent();
+        eventDown.setKey(KeyboardEvent.KEY_Q);
+        eventDown.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(eventQuit);
     }
 
 
@@ -426,6 +435,7 @@ public class Game {
             System.err.println(e.getMessage());
         }
     }
+
 
 
 
